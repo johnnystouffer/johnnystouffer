@@ -45,26 +45,25 @@ I’m a **CS senior at Michigan State University** who loves building. Currently
 
 ## 🚀 Featured Projects
 
-<table width="100%">
-  <tr>
-    <td align="center" width="50%">
-      <a href="https://odysseymaps.com">
-        <img src="./resources/omlogo.png" width="100" alt="Odyssey Maps Demo"/><br>
-        <b>Odyssey Maps</b>
-      </a><br>
-      <sub>React + Spring Boot + PostgreSQL</sub><br>
-      <sub>Track Mario Odyssey progress across 15 kingdoms</sub>
-    </td>
-    <td align="center" width="50%">
-      <a href="https://focus-youtube.vercel.app/">
-        <img src="./resources/focus.svg.png" width="100" alt="FocusTube Demo"/><br>
-        <b>FocusTube</b>
-      </a><br>
-      <sub>Next.js + Tailwind + YouTube API</sub><br>
-      <sub>Distraction-free YouTube wrapper</sub>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <div style="display:inline-block; width:300px; margin:20px; text-align:center;">
+    <a href="https://odysseymaps.com">
+      <img src="./resources/omlogo.png" width="100" alt="Odyssey Maps Demo"/><br>
+      <b>Odyssey Maps</b>
+    </a><br>
+    <sub>React + Spring Boot + PostgreSQL</sub><br>
+    <sub>Track Mario Odyssey progress across 15 kingdoms</sub>
+  </div>
+
+  <div style="display:inline-block; width:300px; margin:20px; text-align:center;">
+    <a href="https://focus-youtube.vercel.app/">
+      <img src="./resources/focus.svg.png" width="100" alt="FocusTube Demo"/><br>
+      <b>FocusTube</b>
+    </a><br>
+    <sub>Next.js + Tailwind + YouTube API</sub><br>
+    <sub>Distraction-free YouTube wrapper</sub>
+  </div>
+</p>
 
 ---
 
