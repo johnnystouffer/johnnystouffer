@@ -34,7 +34,7 @@ I’m a **CS senior at Michigan State University** who loves building. Currently
     </td>
     <td align="center" width="33%">
       <img src="./resources/msulogo.svg.png" width="80"/><br>
-      <b>Teaching Assistant</b><br>
+      <b>DSA Teaching Assistant</b><br>
       <sub>Michigan State University • 2025</sub><br>
       <sub>→ Supported 300+ students in DS & Algos</sub>
     </td>
