@@ -7,11 +7,7 @@ import Topbar from "./topbar";
 
 const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
 const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
-const firaCode = Fira_Code({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"], // pick weights you need
-  variable: "--font-fira-code",
-});
+const firaCode = Fira_Code({ subsets: ["latin"], variable: "--font-fira-code"});
 
 export const metadata: Metadata = {
   title: "Create Next App",
