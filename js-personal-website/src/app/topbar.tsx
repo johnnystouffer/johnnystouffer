@@ -1,16 +1,20 @@
 "use client";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 export default function Topbar() {
   const { resolvedTheme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+
   useEffect(() => setMounted(true), []);
+
+  const hideName = usePathname() === '/';
 
   return (
     <nav className="flex items-center justify-between p-1">
         <div className="flex-1 flex">
-            <h1 className="text-4xl font-extrabold">John Stouffer</h1>
+            {!hideName && <h1 className="text-4xl font-extrabold">John Stouffer</h1>}
         </div>
 
         <ul className="flex gap-4 text-lg">
