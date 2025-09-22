@@ -43,19 +43,15 @@ export default function Topbar() {
     { name: "Contact", path: "/contact" },
   ];
 
-  const currentText =
-    navItems.find((n) => n.path === pathname)?.name || "John Stouffer";
-
   const toggleTheme = () =>
     setTheme(resolvedTheme === "dark" ? "light" : "dark");
 
   return (
     <nav className="relative z-50 flex items-center justify-between p-1">
-      {/* Desktop ≥1000px */}
       <div className="w-full flex items-center justify-between max-[1000px]:hidden">
         <div className="flex-1 flex">
           {!hideName && (
-            <h1 className="text-4xl font-extrabold">John Stouffer</h1>
+            <h1 className="text-2xl p-2 font-extrabold">John H. Stouffer</h1>
           )}
         </div>
 
@@ -107,7 +103,7 @@ export default function Topbar() {
           <i className="las la-bars text-3xl" />
         </button>
 
-        <div className="text-lg font-semibold">John Stouffer</div>
+        <div className="text-lg font-semibold">Johnny Stouffer</div>
 
         <button
           onClick={toggleTheme}

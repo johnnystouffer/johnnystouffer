@@ -5,16 +5,27 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --surface: #f7f7f8;
+  --shadow-1: 0 1px 2px rgba(16,24,40,0.06), 0 1px 3px 1px rgba(16,24,40,0.04);
+  --shadow-2: 0 8px 20px rgba(16,24,40,0.08), 0 4px 8px rgba(16,24,40,0.06);
 }
 
 /* Correct: style the same element that receives the class */
 html.dark {
   --background: #0a0a0a;
   --foreground: #ededed;
+  --surface: #000000; /* subtle lift against #0a0a0a */
+  --shadow-1: 0 1px 2px rgb(100, 100, 100, 0.7), 0 1px 3px 1px rgba(100,100,100,0.6);
+  --shadow-2: 0 10px 24px rgba(100,100,100,0.6), 0 6px 12px rgba(100,100,100,0.5);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: 'Fira Code', Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .shadow-elev-1 { box-shadow: var(--shadow-1); }
+  .shadow-elev-2 { box-shadow: var(--shadow-2); }
 }
