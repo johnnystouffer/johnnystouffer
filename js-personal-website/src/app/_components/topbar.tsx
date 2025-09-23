@@ -39,7 +39,6 @@ export default function Topbar() {
     { name: "Home", path: "/" },
     { name: "Experience", path: "/experience" },
     { name: "Projects", path: "/projects" },
-    { name: "Extra & Resume", path: "/other" },
     { name: "Contact", path: "/contact" },
   ];
 

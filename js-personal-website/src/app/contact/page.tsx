@@ -13,6 +13,7 @@ const EMAILS = [
 const LINKS = {
   linkedin: "https://linkedin.com/in/johnny-stouffer/",
   github: "https://github.com/johnnystouffer",
+  resume: "/John_Stouffer_Resume_Master.pdf"
 };
 
 const listVariants = {
@@ -58,7 +59,6 @@ export default function ContactPage() {
           </motion.p>
         </div>
 
-        {/* Card */}
         <motion.div
           className="mt-8 rounded-3xl overflow-hidden"
           initial={{ opacity: 0, y: 16 }}
@@ -99,7 +99,27 @@ export default function ContactPage() {
               </motion.div>
             ))}
 
-            {/* quick links */}
+            <motion.div variants={itemVariants}>
+              <Link
+                href={LINKS.resume}
+                target="_blank"
+                className="group rounded-2xl border p-5 hover:shadow-md transition-shadow block"
+              >
+                <div className="flex items-center gap-3">
+                  <i className="las la-file-alt text-2xl sm:text-3xl" />
+                  <div>
+                    <div className="font-semibold text-sm sm:text-base">
+                      Resume
+                    </div>
+                    <div className="text-xs sm:text-sm text-muted-foreground group-hover:underline break-all">
+                      View my resume
+                    </div>
+                  </div>
+                </div>
+              </Link>
+            </motion.div>
+
+
             <motion.div variants={itemVariants}>
               <Link
                 href={LINKS.linkedin}
@@ -139,6 +159,7 @@ export default function ContactPage() {
                 </div>
               </Link>
             </motion.div>
+
           </motion.div>
         </motion.div>
       </section>

@@ -40,6 +40,27 @@ const projects: Project[] = [
       "A neural network Machine Learning project, I made this because two things, I love MMA and grew up doing Tang Soo Do (E Dan rank) and I wanted to learn more about PyTorch. I webscraped the UFCs website of ALL fights and ALL fighters, trained it using PyTorch to acheive a 70% accuracy rating.",
     ],
   },
+  {
+    name: "CampusBites",
+    repo: "https://github.com/johnnystouffer/campus-bites",
+    stack: ["Django", "React", "OpenAI API", "CRUD App", "RESTful APIs"],
+    dates: "Aug. 2024 – Sep. 2024",
+    bullets: [
+      "Hackathon project. Lead a team of 4 to create a simple CRUD app for students to post and find new deals that they found around campus. Additionally used OpenAI to make suggestions for users on deals that they want.",
+    ],
+
+  },
+  {
+    name: "Democratic Index Dashboard",
+    link: "https://demoindex-1719fb67ec5e.herokuapp.com/",
+    stack: ["Python", "Plotly Dash", "HTML/CSS", "Pandas", "matplotlib"],
+    dates: "Nov. 2022 – May 2023",
+    bullets: [
+      "School project TURNED Personal Project. Took a report on Democracies around the world and predicting how they are projected to do in the future. Uploaded this data via Pandas, cleaned it, manipulated it, and then created 5 visualizations to show what democracy is like around the world",
+    ],
+
+  },
+
 ];
 
 export default function ProjectsPage() {
@@ -77,8 +98,7 @@ export default function ProjectsPage() {
             key={p.name}
             className="mb-12 pl-4 border-l border-border"
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: idx * 0.1 }}
           >
             <div className="absolute w-3 h-3 bg-primary rounded-full -left-1.5 mt-2.5" />
@@ -87,9 +107,8 @@ export default function ProjectsPage() {
               <motion.h2
                 className="text-xl font-semibold"
                 initial={{ opacity: 0, y: 8 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.45 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.45, delay: idx * 0.15 }}
               >
                 {p.name}
               </motion.h2>
@@ -100,9 +119,8 @@ export default function ProjectsPage() {
               {p.link && (
                 <motion.span
                   initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.05 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.4, delay: idx * 0.2 }}
                 >
                   <Link href={p.link} target="_blank" className="underline">
                     Live site
@@ -112,9 +130,8 @@ export default function ProjectsPage() {
               {p.repo && (
                 <motion.span
                   initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: 0.08 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.4, delay: idx * 0.25 }}
                 >
                   <Link href={p.repo} target="_blank" className="underline">
                     Repository
@@ -129,9 +146,8 @@ export default function ProjectsPage() {
                   key={s}
                   className="px-2 py-1 rounded-full bg-background shadow-sm"
                   initial={{ opacity: 0, scale: 0.95 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: j * 0.05 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.3, delay: idx * 0.3 + j * 0.05 }}
                 >
                   {s}
                 </motion.span>
@@ -143,9 +159,8 @@ export default function ProjectsPage() {
                 <motion.li
                   key={i}
                   initial={{ opacity: 0, x: -10 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ duration: 0.4, delay: idx * 0.4 + i * 0.08 }}
                 >
                   {b}
                 </motion.li>
