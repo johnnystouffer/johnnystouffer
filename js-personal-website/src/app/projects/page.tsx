@@ -118,7 +118,7 @@ export default function ProjectsPage() {
                 <div className="p-5">
                   <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
                     <motion.h2
-                      className="text-xl font-semibold"
+                      className="text-2xl font-semibold"
                       // Start visible. Only apply subtle lift on mount.
                       initial={prefersReducedMotion ? false : { y: 8 }}
                       animate={{ y: 0 }}
@@ -126,10 +126,10 @@ export default function ProjectsPage() {
                     >
                       {p.name}
                     </motion.h2>
-                    <div className="text-sm">{p.dates}</div>
+                    <div className="text-med">{p.dates}</div>
                   </div>
 
-                  <div className="mt-1 text-sm flex flex-wrap gap-x-3 gap-y-1">
+                  <div className="mt-1 text-med font-semibold italic flex flex-wrap gap-x-3 gap-y-1">
                     {p.link && (
                       <span>
                         <Link href={p.link} target="_blank" className="underline">
@@ -160,7 +160,7 @@ export default function ProjectsPage() {
                     ))}
                   </div>
 
-                  <ul className="mt-3 list-disc pl-5 space-y-2 text-sm">
+                  <ul className="mt-3 space-y-2 text-med">
                     {p.bullets.map((b, i) => (
                       <motion.li
                         key={i}

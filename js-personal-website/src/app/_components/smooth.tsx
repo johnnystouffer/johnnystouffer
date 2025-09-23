@@ -12,7 +12,7 @@ export default function SmoothBackground({
                       radial-gradient(circle at 70% 60%, #9333ea 0%, transparent 65%),
                       linear-gradient(to bottom right, #0f172a, #1e293b);
           background-blend-mode: screen;
-          animation: hueShift 80s linear infinite;
+          animation: hueShift 15s linear infinite;
         }
         @keyframes hueShift {
           from { filter: hue-rotate(0deg); }

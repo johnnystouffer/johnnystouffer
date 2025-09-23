@@ -14,24 +14,31 @@ type Item = {
 const extracurriculars: Item[] = [
   {
     company: "Imagine Software",
-    role: "Team Lead -> E-Board (Director of Educational Pipeline)",
+    role: "Director",
     location: "East Lansing, MI",
-    dates: "Sep 2023 – Present",
+    dates: "April 2025 – Present",
     bullets: [
-      "Led training pipeline for 900+ member club, 70 active, 50 being in educational.",
-      "Created website and tutorials to help new members learn tech stack to get onto Imagine client projects and Internships.",
-      "Team lead for 6+ member team on VR/AR Mobile application designed to increase tourism in Aurora IL.",
+      "A 900+ member SWE club with 90+ active members, I directed a 70+ member section that teaches new members our tech stack to join client projects, and help create their own projects"
     ],
-    tech: ["VR/AR", "Leadership", "Curriculum"],
+    tech: ["Next.js", "JavaScript", "FastAPI", "Java", "RESTful APIs"],
+  },
+  {
+    company: "Imagine Software",
+    role: "Team Lead",
+    location: "East Lansing, MI",
+    dates: "Sep 2023 – April 2025",
+    bullets: [
+      "Team lead and lead developer of 6+ developer team. I created and assigned tasks to create an AR/VR application for APS Data Technologies, with the goal to increase tourism in Aurora IL."
+    ],
+    tech: ["React Native", "VR/AR", "Leadership", "Curriculum"],
   },
   {
     company: "Spartan Analytics Consulting Group",
-    role: "Analyst → Project Manager",
+    role: "Analyst & Project Manager",
     location: "East Lansing, MI",
-    dates: "Jan 2023 – Jan 2024",
+    dates: "Jan 2022 – Jan 2024",
     bullets: [
-      "Cleaned, parsed, and visualized data for MSU Transportation.",
-      "Managed analysts to create a project for MSU Culinary Services.",
+      "Started out as an analyst, cleaning, parsing, and visualizing data for MSU Transportion to optimize routes by 10%, then lead a team of analysts to reduce food waste with MSU Culinary Services"
     ],
     tech: ["Analytics", "Visualization", "Project Management"],
   },
@@ -44,9 +51,7 @@ const items: Item[] = [
     location: "Cedar Rapids, IA",
     dates: "May 2025 – Aug 2025",
     bullets: [
-      "Improved field test accuracy by 80% with a real-time map framework for GPS jammer prediction, error radius, and vehicle positions.",
-      "Turned ambiguous operator feedback into concrete UI workflows, raising task completion satisfaction by 50%.",
-      "Built a multi-threaded GPS message parser handling 500+ msgs/min with low latency and fault tolerance.",
+      "Built a real-time map framework that improved field test accuracy by 80% and enabled GPS jammer prediction and vehicle tracking. Designed a multi-threaded parser processing 500+ GPS messages per minute with checksum-based integrity verification."
     ],
     tech: ["C++", "Qt", "Multithreading", "Maps/UI"],
   },
@@ -56,11 +61,9 @@ const items: Item[] = [
     location: "Reno, NV",
     dates: "May 2024 – Aug 2024",
     bullets: [
-      "Designed distributed data pipelines and dashboards to monitor 100+ machines and 10k+ daily reports.",
-      "Cut planner workload by 15+ hours weekly via an automated KPI alerting system with on-call runbooks.",
-      "Automated refresh pipelines to deliver live efficiency metrics for 50+ technicians.",
+      "Developed distributed data pipelines and dashboards monitoring 100+ machines and 10k+ daily reports. Plus I automated KPI alerts and efficiency metrics, cutting maintenance planner workload by 15+ hours weekly and serving 50+ technicians."
     ],
-    tech: ["Python", "Data Pipelines", "Dashboards"],
+    tech: ["Python", "PowerBI", "SQL", "Data Pipelines", "Dashboards"],
   },
   {
     company: "Michigan State University",
@@ -68,11 +71,9 @@ const items: Item[] = [
     location: "East Lansing, MI",
     dates: "Jan 2025 – Aug 2025",
     bullets: [
-      "Co-defined algorithms coursework with 15+ TAs for 300+ students.",
-      "Led helprooms and debugging for 30+ students weekly.",
-      "Resolved 100+ questions on Piazza to improve access outside helprooms.",
+      "Designed coursework for a 300+ student class, additionally led helprooms for 30+ students and resolved online questions through piazza outside of class for 100+ students."
     ],
-    tech: ["Java", "Algorithms", "Data Structures"],
+    tech: ["Python", "Algorithms", "Data Structures"],
   },
 ];
 
@@ -143,7 +144,7 @@ export default function ExperiencePage() {
                   </div>
                   <div className="text-sm">{it.location}</div>
 
-                  <ul className="mt-3 list-disc pl-5 space-y-2 text-sm">
+                  <ul className="mt-3 text-med">
                     {it.bullets.map((b, i) => (
                       <motion.li
                         key={i}
@@ -205,7 +206,7 @@ export default function ExperiencePage() {
                   </div>
                   <div className="text-sm">{it.location}</div>
 
-                  <ul className="mt-3 list-disc pl-5 space-y-2 text-sm">
+                  <ul className="mt-3 text-sm">
                     {it.bullets.map((b, i) => (
                       <motion.li key={i}
                         initial={{ opacity: 0, x: -10 }} whileInView={{ opacity: 1, x: 0 }}
