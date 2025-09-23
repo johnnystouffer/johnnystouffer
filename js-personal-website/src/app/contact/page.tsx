@@ -115,7 +115,6 @@ export default function ContactPage() {
                 </motion.div>
               ))}
 
-              {/* Resume */}
               <motion.div variants={itemVariants} className="relative p-[1px] rounded-2xl">
                 <Link
                   href={LINKS.resume}
@@ -136,7 +135,6 @@ export default function ContactPage() {
                 </Link>
               </motion.div>
 
-              {/* LinkedIn */}
               <motion.div variants={itemVariants} className="relative p-[1px] rounded-2xl">
                 <Link
                   href={LINKS.linkedin}
