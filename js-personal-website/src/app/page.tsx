@@ -32,7 +32,7 @@ export default function Home() {
     const DELETING_MS = prefersReduced ? 0 : 30;
     const HOLD_MS = prefersReduced ? 800 : 1200;
 
-    let timer: number | null = null as any;
+    let timer: number | null = null;
 
     const tick = () => {
       if (!mounted.current) return;
@@ -124,7 +124,7 @@ export default function Home() {
           transition={{ duration: 0.35 }}
         >
           <span className="bg-gradient-to-r from-foreground to-foreground/60 bg-clip-text">
-            Hello, I'm Johnny Stouffer
+            Hello, I&apos;m Johnny Stouffer
           </span>
         </motion.h1>
 
