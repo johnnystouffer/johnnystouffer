@@ -95,6 +95,7 @@ I’m a **CS senior at Michigan State University** who loves building. Currently
   <img src="https://img.shields.io/badge/Django-092E20.svg?style=for-the-badge&logo=django&logoColor=white"/>
   <img src="https://img.shields.io/badge/React%20Native-61DAFB.svg?style=for-the-badge&logo=react&logoColor=black"/>
   <img src="https://img.shields.io/badge/Firebase-FFCA28.svg?style=for-the-badge&logo=firebase&logoColor=black"/>
+  <img src="https://img.shields.io/badge/Supabase-3FCF8E.svg?style=for-the-badge&logo=supabase&logoColor=white"/>
   <img src="https://img.shields.io/badge/Qt-41CD52.svg?style=for-the-badge&logo=qt&logoColor=white"/>
 </p>
 
