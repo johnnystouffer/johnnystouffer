@@ -54,14 +54,14 @@
 <div align="center">
 <div align="left" width="700">
 
-<img src="./resources/omlogo.png" width="60" align="left" alt="Odyssey Maps Demo" hspace="25"/>
+<img src="./resources/omlogo.png" width="70" align="left" alt="Odyssey Maps Demo" hspace="25"/>
 <a href="https://odysseymaps.com"><b>Odyssey Maps</b></a><br>
 <sub>React + Spring Boot + PostgreSQL</sub><br>
 <sub>Track Mario Odyssey progress across 15 kingdoms</sub>
 
 <br clear="left"/><br>
 
-<img src="./resources/focus.svg.png" width="60" align="left" alt="FocusTube Demo" hspace="25"/>
+<img src="./resources/focus.svg.png" width="70" align="left" alt="FocusTube Demo" hspace="25"/>
 <a href="https://focus-youtube.vercel.app/"><b>FocusTube</b></a><br>
 <sub>Next.js + Tailwind + YouTube API</sub><br>
 <sub>Distraction-free YouTube wrapper</sub>
