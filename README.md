@@ -8,68 +8,68 @@
 
 <h3 align="center">Hello!</h3> 
 
-<p align="center">I’m a <b>Software Engineer I</b> at <b>Collins Aerospace</b> that works on mainly <b>Embedded Systems in C++</b>.</p>
+<p align="center">I'm a <b>Software Engineer I</b> at <b>Collins Aerospace</b> that works on mainly <b>Embedded Systems in C++</b>.</p>
 
 <p align="center">On the side I occassionally like to make Weekend project, which is usually <b>Full Stack Development</b> using <b>React</b> and various backend frameworks <b>(Spring Boot, Flask, Django, etc.)</b></p>
 
 <h2 align="center">Experience</h2>
 
-<div align="center">
-<div align="left" width="700">
+<p align="center">
+  <img src="./resources/rtxlogo.svg.png" width="46" align="middle"/>
+  &nbsp;&nbsp;<b>Software Engineer I</b>
+  <br>
+  <sub>Collins Aerospace</sub> &nbsp;•&nbsp; <sub>Present</sub>
+  <br>
+  <sub>Working on real-time mission system technology</sub>
+</p>
 
-<img src="./resources/rtxlogo.svg.png" width="60" align="left" hspace="25"/>
-<b>Software Engineer I</b><br>
-<sub>Collins Aerospace • Present</sub><br>
-<sub>Working on real-time mission system technology</sub>
+<p align="center">
+  <img src="./resources/rtxlogo.svg.png" width="46" align="middle"/>
+  &nbsp;&nbsp;<b>Software Engineering Intern</b>
+  <br>
+  <sub>Collins Aerospace</sub> &nbsp;•&nbsp; <sub>Summer 2025</sub>
+  <br>
+  <sub>Built real-time GPS filtering + predictive mapping</sub>
+</p>
 
-<br clear="left"/><br>
+<p align="center">
+  <img src="./resources/teslalogonew.png" width="46" align="middle"/>
+  &nbsp;&nbsp;<b>Software Intern</b>
+  <br>
+  <sub>Tesla</sub> &nbsp;•&nbsp; <sub>Summer 2024</sub>
+  <br>
+  <sub>Automated KPI dashboards + data pipelines</sub>
+</p>
 
-<img src="./resources/rtxlogo.svg.png" width="60" align="left" hspace="25"/>
-<b>Software Engineering Intern</b><br>
-<sub>Collins Aerospace • Summer 2025</sub><br>
-<sub>Built real-time GPS filtering + predictive mapping</sub>
-
-<br clear="left"/><br>
-
-<img src="./resources/teslalogonew.png" width="60" align="left" hspace="25"/>
-<b>Software Intern</b><br>
-<sub>Tesla • Summer 2024</sub><br>
-<sub>Automated KPI dashboards + data pipelines</sub>
-
-<br clear="left"/><br>
-
-<img src="./resources/msulogo.svg.png" width="60" align="left" hspace="25"/>
-<b>DSA Teaching Assistant</b><br>
-<sub>Michigan State University • '25 - '26</sub><br>
-<sub>Supported 300+ students in DSA</sub>
-
-<br clear="left"/>
-
-</div>
-</div>
+<p align="center">
+  <img src="./resources/msulogo.svg.png" width="46" align="middle"/>
+  &nbsp;&nbsp;<b>DSA Teaching Assistant</b>
+  <br>
+  <sub>Michigan State University</sub> &nbsp;•&nbsp; <sub>'25 - '26</sub>
+  <br>
+  <sub>Supported 300+ students in DSA</sub>
+</p>
 
 
 <h2 align="center">Projects</h2>
 
-<div align="center">
-<div align="left" width="700">
+<p align="center">
+  <img src="./resources/omlogo.png" width="46" align="middle" alt="Odyssey Maps"/>
+  &nbsp;&nbsp;<a href="https://odysseymaps.com"><b>Odyssey Maps</b></a>
+  <br>
+  <sub>React • Spring Boot • PostgreSQL</sub>
+  <br>
+  <sub>Track Mario Odyssey progress across 15 kingdoms</sub>
+</p>
 
-<img src="./resources/omlogo.png" width="70" align="left" alt="Odyssey Maps Demo" hspace="25"/>
-<a href="https://odysseymaps.com"><b>Odyssey Maps</b></a><br>
-<sub>React + Spring Boot + PostgreSQL</sub><br>
-<sub>Track Mario Odyssey progress across 15 kingdoms</sub>
-
-<br clear="left"/><br>
-
-<img src="./resources/focus.svg.png" width="70" align="left" alt="FocusTube Demo" hspace="25"/>
-<a href="https://focus-youtube.vercel.app/"><b>FocusTube</b></a><br>
-<sub>Next.js + Tailwind + YouTube API</sub><br>
-<sub>Distraction-free YouTube wrapper</sub>
-
-<br clear="left"/>
-
-</div>
-</div>
+<p align="center">
+  <img src="./resources/focus.svg.png" width="46" align="middle" alt="FocusTube"/>
+  &nbsp;&nbsp;<a href="https://focus-youtube.vercel.app/"><b>FocusTube</b></a>
+  <br>
+  <sub>Next.js • Tailwind • YouTube API</sub>
+  <br>
+  <sub>Distraction-free YouTube wrapper</sub>
+</p>
 
 <h2 align="center">Languages and Tools</h2>
 
