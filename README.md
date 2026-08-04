@@ -1,76 +1,79 @@
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=header"/>
-</p>
-
-<h1 align="center">Hi 👋  I'm Johnny Stouffer</h1>
-
-<p align="center">
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&pause=2000&color=0ef7b3&center=true&vCenter=true&width=600&lines=Prev.+Intern+%40+RTX+%2B+Tesla;CS+Senior+%40+MSU;DSA+TA+%40+MSU" alt="Typing SVG" />
-  </a>
+  <img src="https://superultrawidewallpaper.com/wp-content/uploads/2021/01/morning-mountain-3840x1080-2048x576.jpg"/>
 </p>
 
 
-## 👨🏻‍💻 About Me  
-
-I’m a **CS senior at Michigan State University** who loves building. Currently, I’m developing **Odyssey Maps**, **FocusTube**, and other projects. Currently trying to self learn **Computer Vision** and **Computer Graphics** on the side.
+<h1 align="center">Johnny Stouffer</h1>
 
 
-## 💼 Experience
+<h3 align="center">Hello!</h3> 
 
-<table>
+<p align="center">I’m a <b>Software Engineer I</b> at <b>Collins Aerospace</b> that works on mainly <b>Embedded Systems in C++</b>.</p>
+
+<p align="center">On the side I occassionally like to make Weekend project, which is usually <b>Full Stack Development</b> using <b>React</b> and various backend frameworks <b>(Spring Boot, Flask, Django, etc.)</b></p>
+
+<h2 align="center">Experience</h2>
+
+<table width="100%">
   <tr>
-    <td align="center" width="33%">
-      <img src="./resources/rtxlogo.svg.png" width="80"/><br>
+    <td align="center" width="80"><img src="./resources/rtxlogo.svg.png" width="80"/></td>
+    <td align="left">
+      <b>Software Engineer I</b><br>
+      <sub>Collins Aerospace • Present</sub><br>
+      <sub>Working on real-time mission system technology</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="80"><img src="./resources/rtxlogo.svg.png" width="80"/></td>
+    <td align="left">
       <b>Software Engineering Intern</b><br>
       <sub>Collins Aerospace • Summer 2025</sub><br>
-      <sub>→ Built real-time GPS filtering + predictive mapping</sub>
+      <sub>Built real-time GPS filtering + predictive mapping</sub>
     </td>
-    <td align="center" width="33%">
-      <img src="./resources/teslalogo.svg.png" width="80"/><br>
+  </tr>
+  <tr>
+    <td align="center" width="80"><img src="./resources/teslalogonew.png" width="80"/></td>
+    <td align="left">
       <b>Software Intern</b><br>
       <sub>Tesla • Summer 2024</sub><br>
-      <sub>→ Automated KPI dashboards + data pipelines</sub>
+      <sub>Automated KPI dashboards + data pipelines</sub>
     </td>
-    <td align="center" width="33%">
-      <img src="./resources/msulogo.svg.png" width="80"/><br>
+  </tr>
+  <tr>
+    <td align="center" width="80"><img src="./resources/msulogo.svg.png" width="80"/></td>
+    <td align="left">
       <b>DSA Teaching Assistant</b><br>
-      <sub>Michigan State University • 2025</sub><br>
-      <sub>→ Supported 300+ students in DS & Algos</sub>
+      <sub>Michigan State University • '25 - '26</sub><br>
+      <sub>Supported 300+ students in DSA</sub>
+    </td>
+  </tr>
+</table>
+
+
+<h2 align="center">Projects</h2>
+
+<table width="100%">
+  <tr>
+    <td align="center" width="80"><img src="./resources/omlogo.png" width="80" alt="Odyssey Maps Demo"/></td>
+    <td align="left">
+      <a href="https://odysseymaps.com"><b>Odyssey Maps</b></a><br>
+      <sub>React + Spring Boot + PostgreSQL</sub><br>
+      <sub>Track Mario Odyssey progress across 15 kingdoms</sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="80"><img src="./resources/focus.svg.png" width="80" alt="FocusTube Demo"/></td>
+    <td align="left">
+      <a href="https://focus-youtube.vercel.app/"><b>FocusTube</b></a><br>
+      <sub>Next.js + Tailwind + YouTube API</sub><br>
+      <sub>Distraction-free YouTube wrapper</sub>
     </td>
   </tr>
 </table>
 
 ---
 
-## 🚀 Featured Projects
-
-<p align="center">
-  <table>
-    <tr>
-      <td align="center" width="300">
-        <a href="https://odysseymaps.com">
-          <img src="./resources/omlogo.png" width="100" alt="Odyssey Maps Demo"/><br>
-          <b>Odyssey Maps</b>
-        </a><br>
-        <sub>React + Spring Boot + PostgreSQL</sub><br>
-        <sub>Track Mario Odyssey progress across 15 kingdoms</sub>
-      </td>
-      <td align="center" width="300">
-        <a href="https://focus-youtube.vercel.app/">
-          <img src="./resources/focus.svg.png" width="100" alt="FocusTube Demo"/><br>
-          <b>FocusTube</b>
-        </a><br>
-        <sub>Next.js + Tailwind + YouTube API</sub><br>
-        <sub>Distraction-free YouTube wrapper</sub>
-      </td>
-    </tr>
-  </table>
-</p>
-
----
-
-<h2 align="center">🛠️ Languages and Tools</h2>
+<h2 align="center">Languages and Tools</h2>
 
 <p align="center">
   <!-- Languages -->
@@ -81,8 +84,6 @@ I’m a **CS senior at Michigan State University** who loves building. Currently
   <img src="https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=typescript&logoColor=white"/>
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E.svg?style=for-the-badge&logo=javascript&logoColor=black"/>
   <img src="https://img.shields.io/badge/SQL-4479A1.svg?style=for-the-badge&logo=postgresql&logoColor=white"/>
-  <img src="https://img.shields.io/badge/HTML5-E34F26.svg?style=for-the-badge&logo=html5&logoColor=white"/>
-  <img src="https://img.shields.io/badge/CSS3-1572B6.svg?style=for-the-badge&logo=css3&logoColor=white"/>
 </p>
 
 <p align="center">
@@ -93,9 +94,6 @@ I’m a **CS senior at Michigan State University** who loves building. Currently
   <img src="https://img.shields.io/badge/Spring%20Boot-6DB33F.svg?style=for-the-badge&logo=springboot&logoColor=white"/>
   <img src="https://img.shields.io/badge/Flask-000000.svg?style=for-the-badge&logo=flask&logoColor=white"/>
   <img src="https://img.shields.io/badge/Django-092E20.svg?style=for-the-badge&logo=django&logoColor=white"/>
-  <img src="https://img.shields.io/badge/React%20Native-61DAFB.svg?style=for-the-badge&logo=react&logoColor=black"/>
-  <img src="https://img.shields.io/badge/Firebase-FFCA28.svg?style=for-the-badge&logo=firebase&logoColor=black"/>
-  <img src="https://img.shields.io/badge/Supabase-3FCF8E.svg?style=for-the-badge&logo=supabase&logoColor=white"/>
   <img src="https://img.shields.io/badge/Qt-41CD52.svg?style=for-the-badge&logo=qt&logoColor=white"/>
 </p>
 
@@ -105,23 +103,18 @@ I’m a **CS senior at Michigan State University** who loves building. Currently
   <img src="https://img.shields.io/badge/Git-F05032.svg?style=for-the-badge&logo=git&logoColor=white"/>
   <img src="https://img.shields.io/badge/GCP-4285F4.svg?style=for-the-badge&logo=googlecloud&logoColor=white"/>
   <img src="https://img.shields.io/badge/Linux-FCC624.svg?style=for-the-badge&logo=linux&logoColor=black"/>
-  <img src="https://img.shields.io/badge/Android%20Studio-3DDC84.svg?style=for-the-badge&logo=androidstudio&logoColor=white"/>
   <img src="https://img.shields.io/badge/Subversion-809CC9.svg?style=for-the-badge&logo=subversion&logoColor=white"/>
 </p>
 
 <p align="center">
-  <!-- ML & Data -->
-  <img src="https://img.shields.io/badge/PyTorch-EE4C2C.svg?style=for-the-badge&logo=pytorch&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Scikit--learn-F7931E.svg?style=for-the-badge&logo=scikitlearn&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Pandas-150458.svg?style=for-the-badge&logo=pandas&logoColor=white"/>
-  <img src="https://img.shields.io/badge/NumPy-013243.svg?style=for-the-badge&logo=numpy&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Polars-5A5A5A.svg?style=for-the-badge&logo=polars&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Matplotlib-11557c.svg?style=for-the-badge&logo=plotly&logoColor=white"/>
-  <img src="https://img.shields.io/badge/BeautifulSoup-3776AB.svg?style=for-the-badge&logo=python&logoColor=white"/>
+  <!-- AI Tools -->
+  <img src="https://img.shields.io/badge/Cursor-000000.svg?style=for-the-badge&logo=cursor&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Claude%20Code-D97757.svg?style=for-the-badge&logo=claude&logoColor=white"/>
 </p>
 
 
-<h2 align="center">🌐 Let's Connect</h2>
+
+<h2 align="center"> Reach Out! </h2>
 
 <p align="center">
   <a href="https://linkedin.com/in/johnny-stouffer">
@@ -133,5 +126,5 @@ I’m a **CS senior at Michigan State University** who loves building. Currently
 </p>
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&height=100&section=footer"/>
+  <img src="https://superultrawidewallpaper.com/wp-content/uploads/2021/01/morning-mountain-3840x1080-2048x576.jpg"/>
 </p>
