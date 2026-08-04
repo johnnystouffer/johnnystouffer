@@ -1,3 +1,6 @@
 js-personal-website/.next
 js-personal-website/node_modules
 js-personal-website/next-env.d.ts
+
+.DS_Store
+**/.DS_Store

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://superultrawidewallpaper.com/wp-content/uploads/2021/01/morning-mountain-3840x1080-2048x576.jpg"/>
+  <img src="resources/background.png"/>
 </p>
 
 
@@ -14,62 +14,62 @@
 
 <h2 align="center">Experience</h2>
 
-<table width="100%">
-  <tr>
-    <td align="center" width="80"><img src="./resources/rtxlogo.svg.png" width="80"/></td>
-    <td align="left">
-      <b>Software Engineer I</b><br>
-      <sub>Collins Aerospace • Present</sub><br>
-      <sub>Working on real-time mission system technology</sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="80"><img src="./resources/rtxlogo.svg.png" width="80"/></td>
-    <td align="left">
-      <b>Software Engineering Intern</b><br>
-      <sub>Collins Aerospace • Summer 2025</sub><br>
-      <sub>Built real-time GPS filtering + predictive mapping</sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="80"><img src="./resources/teslalogonew.png" width="80"/></td>
-    <td align="left">
-      <b>Software Intern</b><br>
-      <sub>Tesla • Summer 2024</sub><br>
-      <sub>Automated KPI dashboards + data pipelines</sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="80"><img src="./resources/msulogo.svg.png" width="80"/></td>
-    <td align="left">
-      <b>DSA Teaching Assistant</b><br>
-      <sub>Michigan State University • '25 - '26</sub><br>
-      <sub>Supported 300+ students in DSA</sub>
-    </td>
-  </tr>
-</table>
+<div align="center">
+<div align="left" width="700">
+
+<img src="./resources/rtxlogo.svg.png" width="60" align="left" hspace="25"/>
+<b>Software Engineer I</b><br>
+<sub>Collins Aerospace • Present</sub><br>
+<sub>Working on real-time mission system technology</sub>
+
+<br clear="left"/><br>
+
+<img src="./resources/rtxlogo.svg.png" width="60" align="left" hspace="25"/>
+<b>Software Engineering Intern</b><br>
+<sub>Collins Aerospace • Summer 2025</sub><br>
+<sub>Built real-time GPS filtering + predictive mapping</sub>
+
+<br clear="left"/><br>
+
+<img src="./resources/teslalogonew.png" width="60" align="left" hspace="25"/>
+<b>Software Intern</b><br>
+<sub>Tesla • Summer 2024</sub><br>
+<sub>Automated KPI dashboards + data pipelines</sub>
+
+<br clear="left"/><br>
+
+<img src="./resources/msulogo.svg.png" width="60" align="left" hspace="25"/>
+<b>DSA Teaching Assistant</b><br>
+<sub>Michigan State University • '25 - '26</sub><br>
+<sub>Supported 300+ students in DSA</sub>
+
+<br clear="left"/>
+
+</div>
+</div>
 
 
 <h2 align="center">Projects</h2>
 
-<table width="100%">
-  <tr>
-    <td align="center" width="80"><img src="./resources/omlogo.png" width="80" alt="Odyssey Maps Demo"/></td>
-    <td align="left">
-      <a href="https://odysseymaps.com"><b>Odyssey Maps</b></a><br>
-      <sub>React + Spring Boot + PostgreSQL</sub><br>
-      <sub>Track Mario Odyssey progress across 15 kingdoms</sub>
-    </td>
-  </tr>
-  <tr>
-    <td align="center" width="80"><img src="./resources/focus.svg.png" width="80" alt="FocusTube Demo"/></td>
-    <td align="left">
-      <a href="https://focus-youtube.vercel.app/"><b>FocusTube</b></a><br>
-      <sub>Next.js + Tailwind + YouTube API</sub><br>
-      <sub>Distraction-free YouTube wrapper</sub>
-    </td>
-  </tr>
-</table>
+<div align="center">
+<div align="left" width="700">
+
+<img src="./resources/omlogo.png" width="60" align="left" alt="Odyssey Maps Demo" hspace="25"/>
+<a href="https://odysseymaps.com"><b>Odyssey Maps</b></a><br>
+<sub>React + Spring Boot + PostgreSQL</sub><br>
+<sub>Track Mario Odyssey progress across 15 kingdoms</sub>
+
+<br clear="left"/><br>
+
+<img src="./resources/focus.svg.png" width="60" align="left" alt="FocusTube Demo" hspace="25"/>
+<a href="https://focus-youtube.vercel.app/"><b>FocusTube</b></a><br>
+<sub>Next.js + Tailwind + YouTube API</sub><br>
+<sub>Distraction-free YouTube wrapper</sub>
+
+<br clear="left"/>
+
+</div>
+</div>
 
 ---
 
@@ -126,5 +126,5 @@
 </p>
 
 <p align="center">
-  <img src="https://superultrawidewallpaper.com/wp-content/uploads/2021/01/morning-mountain-3840x1080-2048x576.jpg"/>
+  <img src="resources/background.png"/>
 </p>
