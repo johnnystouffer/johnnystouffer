@@ -1,19 +1,18 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
+  --text: #fff;
+  --text-h: #d8a7b1;
+  --bg: #131315;
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
+  --accent: #d8a7b1;
+  --accent-hover: #D09DA8;
+  --accent-active: #C28E9A;
   --shadow:
     rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
 
-  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  --sans: "Lora", 'Segoe UI', Roboto, sans-serif;
+  --heading: "Lora", 'Segoe UI', Roboto, sans-serif;
+  --mono: Consolas, monospace;
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;
@@ -83,7 +82,6 @@ code {
   padding: 5px 10px;
   border-radius: 5px;
   color: var(--accent);
-  background: var(--accent-bg);
   border: 2px solid transparent;
   transition: border-color 0.3s;
   margin-bottom: 24px;
@@ -141,7 +139,6 @@ code {
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
-  border-inline: 1px solid var(--border);
   min-height: 100svh;
   display: flex;
   flex-direction: column;
@@ -273,4 +270,9 @@ code {
     right: 0;
     border-right-color: var(--border);
   }
+}
+
+::selection {
+  background: var(--accent-active);
+  color: var(--text);
 }
