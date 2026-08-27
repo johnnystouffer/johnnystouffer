@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { route, link } from './router.svelte'
+
   const links = [
     { label: 'Home', href: '/' },
     { label: 'Experience', href: '/experience' },
@@ -9,10 +11,20 @@
   ]
 
   let open = $state(false)
+
+  function isActive(href: string): boolean {
+    if (href === '/') return route.path === '/'
+    return route.path === href || route.path.startsWith(href + '/')
+  }
+
+  function go(event: MouseEvent, href: string) {
+    open = false
+    link(event, href)
+  }
 </script>
 
 <header class="navbar">
-  <a class="brand" href="/">John Stouffer</a>
+  <a class="brand" href="/" onclick={(e) => go(e, '/')}>John Stouffer</a>
 
   <button
     class="toggle"
@@ -27,9 +39,13 @@
 
   <nav class:open>
     <ul>
-      {#each links as link}
+      {#each links as item}
         <li>
-          <a href={link.href} onclick={() => (open = false)}>{link.label}</a>
+          <a
+            href={item.href}
+            class:active={isActive(item.href)}
+            onclick={(e) => go(e, item.href)}>{item.label}</a
+          >
         </li>
       {/each}
     </ul>
@@ -86,6 +102,11 @@
     }
   }
 
+  nav a.active {
+    color: var(--accent);
+    font-weight: 600;
+  }
+
   .toggle {
     display: none;
     flex-direction: column;
@@ -122,6 +143,7 @@
 
     nav.open {
       max-height: 400px;
+      border-bottom: 1px dashed #696969;
     }
 
     nav ul {
