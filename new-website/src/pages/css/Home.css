@@ -1,0 +1,24 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.subtitle-short {
+    display: none;
+}
+
+.subtitle-long {
+    display: block;
+}
+
+@media (max-width: 675px) {
+    .subtitle-short {
+        display: block;
+    }
+
+    .subtitle-long {
+        display: none;
+    }
+}

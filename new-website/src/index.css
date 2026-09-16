@@ -1,0 +1,43 @@
+:root {
+  --menu-bg: #ffffff;
+  --menu-border: #ffa7a740;
+  --text-color: #000000;
+  --background-color: #ffffff;
+
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+#root {
+  width: min(700px, 90%);
+  margin-inline: auto;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --menu-bg: #000000;
+    --menu-border: #f5f5f540;
+    --text-color: #f5f5f5;
+    --background-color: #000000;
+
+    background-color: var(--background-color);
+    color: var(--text-color);
+  }
+}
+
+body {
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+
