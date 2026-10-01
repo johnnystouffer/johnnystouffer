@@ -1,28 +1,89 @@
 :root {
-  --menu-bg: #ffffff;
-  --menu-border: #ffa7a740;
   --text-color: #000000;
-  --background-color: #ffffff;
+  --background-color: #fafafa;
+  --accent: #D39090;
+
+  --accent-soft: color-mix(in srgb, var(--accent) 12%, transparent);
+  --muted: color-mix(in srgb, var(--text-color) 55%, transparent);
+  --surface: color-mix(in srgb, var(--text-color) 5%, transparent);
+  --line: color-mix(in srgb, var(--text-color) 16%, transparent);
+
+  --panel-bg: color-mix(in srgb, var(--background-color) 95%, transparent);
+  --panel-pad: clamp(1.5rem, 4vw, 3rem);
+
+  --menu-bg: var(--background-color);
+  --menu-border: var(--line);
+
+  --code-bg: color-mix(in srgb, var(--accent) 7%, var(--background-color));
+  --code-border: color-mix(in srgb, var(--accent) 20%, var(--line));
+  --code-fg: color-mix(in srgb, var(--text-color) 88%, var(--accent) 12%);
+  --code-comment: color-mix(in srgb, var(--text-color) 42%, transparent);
+  --code-string: #7f9468;
+  --code-number: #bd8151;
+  --code-keyword: #a4739c;
+  --code-function: #5e85a1;
+  --code-punct: #6f9c8f;
+
+  --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  --font-body: 'IBM Plex Serif', Georgia, 'Times New Roman', serif;
+  --font-heading: 'Lora', 'IBM Plex Serif', Georgia, serif;
+
+  font-family: var(--font-body);
 
   background-color: var(--background-color);
   color: var(--text-color);
 }
 
 #root {
-  width: min(700px, 90%);
+  width: min(950px, 92%);
   margin-inline: auto;
   height: 100vh;
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  isolation: isolate;
+}
+
+@media (max-width: 550px) {
+  #root {
+    width: 100%;
+  }
+}
+
+:root[data-theme='dark'] {
+  --text-color: #f5f5f5;
+  --background-color: #000000;
+  --accent: #c81578;
+
+  --code-bg: color-mix(in srgb, white 6%, var(--background-color));
+  --code-border: var(--line);
+  --code-fg: color-mix(in srgb, var(--text-color) 90%, var(--accent) 10%);
+  --code-comment: color-mix(in srgb, var(--text-color) 45%, transparent);
+  --code-string: #a3bd8f;
+  --code-number: #dba576;
+  --code-keyword: #cc9dc3;
+  --code-function: #8badc7;
+  --code-punct: #93c2b3;
+
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --menu-bg: #000000;
-    --menu-border: #f5f5f540;
+  :root:not([data-theme='light']) {
     --text-color: #f5f5f5;
-    --background-color: #000000;
+    --background-color: #1C1A1A;
+    --accent: #DCA1A1;
+
+    --code-bg: color-mix(in srgb, white 6%, var(--background-color));
+    --code-border: var(--line);
+    --code-fg: color-mix(in srgb, var(--text-color) 90%, var(--accent) 10%);
+    --code-comment: color-mix(in srgb, var(--text-color) 45%, transparent);
+    --code-string: #a3bd8f;
+    --code-number: #dba576;
+    --code-keyword: #cc9dc3;
+    --code-function: #8badc7;
+    --code-punct: #93c2b3;
 
     background-color: var(--background-color);
     color: var(--text-color);
@@ -39,5 +100,42 @@ body {
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
+  font-family: var(--font-heading);
 }
 
+/* form controls don't inherit fonts by default */
+button, input, select, textarea {
+  font-family: inherit;
+}
+
+code, kbd, pre, samp {
+  font-family: var(--font-mono);
+}
+
+
+/* links: inherit the page color scheme instead of browser defaults */
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+a:hover { color: var(--text-color); }
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 45%, transparent);
+  color: var(--text-color);
+}
+
+/* theme switch: one crossfade for the whole page, photo included (see useTheme.js) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+}

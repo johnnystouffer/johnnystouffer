@@ -1,15 +1,32 @@
 .navbar {
   position: relative;
+  /* backdrop-filter makes this a stacking context, so the dropdown's own
+     z-index can't escape it — the navbar has to outrank .main-content here. */
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
-  padding: 1rem 0;
+  padding: 1.5rem var(--panel-pad);
+
+  background-color: var(--panel-bg);
+  backdrop-filter: blur(12px);
+  border-inline: 1px solid var(--line);
+}
+
+.navbar::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 95%;
+  border-bottom: 1px solid color-mix(in srgb, var(--line) 55%, transparent);
 }
 
 .navbar-links {
   display: flex;
-  gap: 1rem;
+  gap: 1.25rem;
   list-style: none;
   margin: 0;
   padding: 0;
@@ -45,13 +62,14 @@
   margin: 0;
   padding: 1.25rem;
   list-style: none;
-  background-color: var(--menu-bg);
-  border: 1px solid var(--menu-border);
+  background-color: var(--background-color);
+  border: 1px solid var(--line);
   border-top: none;
   border-radius: 0 0 12px 12px;
+  z-index: 100;
 }
 
-@media (max-width: 675px) {
+@media (max-width: 830px) {
   .navbar-links {
     display: none;
   }
@@ -61,8 +79,37 @@
   }
 }
 
-@media (min-width: 676px) {
+@media (min-width: 830px) {
   .navbar-menu {
     display: none;
   }
 }
+
+/* links */
+.navbar-name {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.navbar-name:hover { color: var(--accent); }
+
+.navbar-links a,
+.navbar-menu a {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.02rem;
+  color: var(--muted);
+  padding-bottom: 0.2rem;
+  border-bottom: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.navbar-links a:hover,
+.navbar-menu a:hover {
+  color: var(--text-color);
+  border-bottom-color: var(--accent);
+}
+
+.navbar-toggle { color: var(--text-color); }

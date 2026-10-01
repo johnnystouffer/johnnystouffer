@@ -1,8 +1,39 @@
 .main-content {
   flex: 1;
-  min-height: 0; 
+  min-height: 0;
   overflow-y: auto;
   display: flex;
   flex-direction: column;
   justify-content: safe center;
+
+  background-color: var(--panel-bg);
+  backdrop-filter: blur(12px);
+  padding-inline: var(--panel-pad);
+  border-inline: 1px solid var(--line);
+
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.main-content:hover,
+.main-content:focus-within {
+  scrollbar-color: var(--muted) transparent;
+}
+
+.main-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 4px;
+}
+
+.main-content:hover::-webkit-scrollbar-thumb,
+.main-content:focus-within::-webkit-scrollbar-thumb {
+  background: var(--muted);
 }

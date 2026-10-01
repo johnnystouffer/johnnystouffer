@@ -1,0 +1,16 @@
+.blog-page {
+    padding-block: 2rem 4rem;
+}
+
+.blog-back {
+    display: inline-block;
+    margin-bottom: 3rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    transition: color 0.15s;
+}
+
+.blog-back:hover { color: var(--accent); }

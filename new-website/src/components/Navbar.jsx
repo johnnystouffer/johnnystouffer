@@ -3,14 +3,13 @@ import { Link } from 'react-router-dom'
 import './css/Navbar.css'
 
 const links = [
-  { to: '/', label: 'Home' },
-  { to: '/experience', label: 'Experience' },
-  { to: '/blog', label: 'Blog' },
-  { to: '/ratings', label: 'Ratings' },
-  { to: '/connect', label: 'Connect' },
+  { to: '/', label: 'HOME [H]' },
+  { to: '/experience', label: 'EXPERIENCE [E]' },
+  { to: '/blog', label: 'BLOG [B]' },
+  { to: '/ratings', label: 'RATINGS [R]' },
 ]
 
-export default function Navbar() {
+export default function Navbar({ children }) {
   const [open, setOpen] = useState(false)
 
   return (
@@ -26,6 +25,8 @@ export default function Navbar() {
           </li>
         ))}
       </ul>
+
+      {children}
 
       <div
         type="button"

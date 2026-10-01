@@ -1,0 +1,259 @@
+/* Shares the blog index's heading, search and filters (Blogs.css). Rows here
+   expand in place into a review card instead of linking out. */
+
+.ratings-type-option {
+    text-transform: capitalize;
+}
+
+/* column headers line up with the row grid below */
+.ratings-columns {
+    display: grid;
+    grid-template-columns: 4.6rem minmax(0, 1fr) 4.5rem;
+    gap: 0.5rem;
+}
+
+.ratings-columns-score {
+    text-align: right;
+}
+
+.ratings-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.ratings-item {
+    border-bottom: 1px solid var(--line);
+}
+
+/* collapsed row: same rhythm as a blog row, plus score and +/− */
+.ratings-row {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 0.5rem 4.1rem minmax(0, 1fr) auto 1rem;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.7rem 0;
+    font: inherit;
+    text-align: left;
+    color: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.ratings-row:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+.ratings-row-marker {
+    width: 0.4rem;
+    height: 0.4rem;
+    background: var(--accent);
+    transition: transform 0.25s ease;
+}
+
+.ratings-item.is-open .ratings-row-marker {
+    transform: rotate(45deg);
+}
+
+.ratings-row-date {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    letter-spacing: -0.02em;
+    color: var(--accent);
+    white-space: nowrap;
+}
+
+.ratings-row-title {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    min-width: 0;
+    font-size: 1.15rem;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    transition: color 0.15s;
+}
+
+.ratings-row-type {
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.ratings-row-score {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    color: var(--accent);
+    text-align: right;
+    min-width: 2.5rem;
+}
+
+.ratings-row-plus {
+    font-family: var(--font-mono);
+    color: var(--muted);
+    text-align: center;
+    transition: color 0.15s;
+}
+
+.ratings-row:hover .ratings-row-title,
+.ratings-item.is-open .ratings-row-title {
+    color: var(--accent);
+}
+
+.ratings-row:hover .ratings-row-plus {
+    color: var(--text-color);
+}
+
+/* expanding panel */
+.ratings-panel {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ratings-item.is-open .ratings-panel {
+    grid-template-rows: 1fr;
+}
+
+.ratings-panel-inner {
+    min-height: 0;
+    overflow: hidden;
+}
+
+.ratings-detail {
+    display: grid;
+    grid-template-columns: 11rem minmax(0, 1fr);
+    gap: 1.5rem;
+    padding: 0.5rem 0 1.5rem 1rem;
+
+    opacity: 0;
+    transform: translateY(-0.4rem);
+    transition: opacity 0.2s ease, transform 0.35s ease;
+}
+
+.ratings-item.is-open .ratings-detail {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0.1s;
+}
+
+/* artwork: poster shape for film/TV/books, square for music */
+.ratings-media {
+    align-self: start;
+    width: 100%;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    overflow: hidden;
+}
+
+.ratings-media.is-poster { aspect-ratio: 2 / 3; }
+.ratings-media.is-square { aspect-ratio: 1; }
+
+.ratings-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.ratings-media-empty {
+    height: 100%;
+    display: grid;
+    place-items: center;
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+/* review text */
+.ratings-review {
+    min-width: 0;
+}
+
+.ratings-review-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.ratings-review-title {
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+
+.ratings-review-meta {
+    margin-top: 0.35rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.ratings-review-score {
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+    font-size: 1.8rem;
+    line-height: 1;
+    color: var(--accent);
+}
+
+.ratings-review-score span {
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-left: 0.15rem;
+}
+
+.ratings-review-summary {
+    margin: 0.9rem 0 0;
+    font-style: italic;
+    color: var(--muted);
+}
+
+/* the blog body is sized for full pages; tone it down inside a card */
+.ratings-review .blog {
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+
+.ratings-review .blog-body > :first-child {
+    margin-top: 0.9rem;
+}
+
+@media (max-width: 600px) {
+    .ratings-detail {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1rem;
+        padding-left: 0;
+    }
+
+    .ratings-media {
+        width: min(12rem, 60%);
+    }
+
+    .ratings-row-title {
+        font-size: 1.05rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ratings-panel,
+    .ratings-detail,
+    .ratings-row-marker {
+        transition: none;
+    }
+}

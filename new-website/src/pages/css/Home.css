@@ -1,24 +1,104 @@
-.home-container {
+/* Minimal, centered intro. Serif for prose, mono for small labels,
+   with the site's hairline accent rule and accent hovers. */
+.home {
+    position: relative;
+    isolation: isolate;
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    padding-block: 3rem;
 }
 
-.subtitle-short {
-    display: none;
+/* Braille art, 65 columns wide. Fixed size, but it shrinks to fit narrow
+   screens (65 cols x ~0.6em per mono glyph). */
+.home-art {
+    width: 100%;
+    margin-bottom: 2.5rem;
+    container-type: inline-size;
 }
 
-.subtitle-long {
+.home-art pre {
+    margin: 0;
+    font-family: var(--font-mono);
+    font-size: min(12px, calc(100cqi / (65 * 0.6)));
+    line-height: 1;
+    letter-spacing: 0;
+    white-space: pre;
+    overflow: hidden;
+    user-select: none;
+    color: color-mix(in srgb, var(--accent) 70%, black);
+}
+
+.home-name {
+    font-size: clamp(3rem, 11vw, 6rem);
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: -0.03em;
+}
+
+.home-rule {
     display: block;
+    width: 3.5rem;
+    height: 1px;
+    margin: 1.6rem 0 1.4rem;
+    background: var(--accent);
 }
 
-@media (max-width: 675px) {
-    .subtitle-short {
-        display: block;
-    }
-
-    .subtitle-long {
-        display: none;
-    }
+.home-role,
+.home-prev {
+    margin: 0;
 }
+
+.home-role {
+    font-size: 1.3rem;
+    font-style: italic;
+    color: var(--text-color);
+}
+
+.home-prev {
+    margin-top: 0.35rem;
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--muted);
+}
+
+.home-intro {
+    max-width: 30rem;
+    margin: 1.75rem 0 0;
+    font-size: 1.05rem;
+    line-height: 1.65;
+}
+
+.home-contacts {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    display: flex;
+    gap: 1.6rem;
+}
+
+.home-contacts a {
+    display: block;
+    color: var(--muted);
+    transition: color 0.15s;
+}
+
+.home-contacts a:hover,
+.home-contacts a:focus-visible {
+    color: var(--accent);
+}
+
+.home-contacts svg {
+    display: block;
+    width: 1.85rem;
+    height: 1.85rem;
+}
+
+.home .theme-toggle {
+    margin-top: 1.75rem;
+    color: var(--muted);
+}
+

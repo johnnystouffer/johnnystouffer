@@ -1,0 +1,153 @@
+/* Laid out like the resume PDF (title + dates on one line, org + location
+   under it, bullets below), styled like the blog index: light oversized
+   heading, mono uppercase labels on hairline rules, accent dates. */
+.exp-page {
+    padding-block: 2rem 4rem;
+}
+
+/* header: heading + contact line, like the top of the resume */
+.exp-header {
+    margin-bottom: 1rem;
+}
+
+.exp-heading {
+    font-size: clamp(3.5rem, 12vw, 5.5rem);
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin: 0 0 1.25rem;
+}
+
+.exp-contact {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.25rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+}
+
+.exp-contact a {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color 0.15s;
+}
+
+.exp-contact a:hover,
+.exp-contact .exp-download {
+    color: var(--accent);
+}
+
+/* sections */
+.exp-section {
+    margin-top: 2.5rem;
+}
+
+.exp-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 0;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.exp-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* entries */
+/* every entry gets the same inner padding so the current role's tint has
+   room around its text without changing its width */
+.exp-entry {
+    padding: 1.1rem 0.9rem;
+    border-bottom: 1px solid var(--line);
+}
+
+.exp-entry-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 0.5rem 1.5rem;
+}
+
+.exp-entry-title {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0 0.6rem;
+    margin: 0;
+    min-width: 0;
+    font-family: var(--font-body);
+    font-size: 1.15rem;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
+
+.exp-entry-tag {
+    font-size: 0.9rem;
+    font-weight: 400;
+    font-style: italic;
+    color: var(--muted);
+}
+
+/* plain pink marker after the current job's title */
+.exp-entry-now {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+}
+
+.exp-entry-dates {
+    flex-shrink: 0;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: -0.02em;
+    color: var(--accent);
+    white-space: nowrap;
+}
+
+.exp-entry-sub {
+    margin-top: 0.2rem;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--muted);
+}
+
+.exp-entry-points {
+    margin: 0.7rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.exp-entry-points li {
+    position: relative;
+    padding-left: 1rem;
+}
+
+.exp-entry-points li::before {
+    content: "–";
+    position: absolute;
+    left: 0;
+    color: var(--muted);
+}
+
+/* the current role is only tinted, so it keeps the same size and spacing as
+   every other entry. The left bar is an inset shadow so it doesn't shift the text. */
+@media (max-width: 600px) {
+    .exp-entry-row {
+        flex-direction: column;
+        gap: 0.15rem;
+    }
+}
