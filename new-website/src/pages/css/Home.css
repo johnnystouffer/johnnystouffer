@@ -29,7 +29,13 @@
     white-space: pre;
     overflow: hidden;
     user-select: none;
+    /* light mode: the accent pink, deepened */
     color: color-mix(in srgb, var(--accent) 70%, black);
+}
+
+/* dark mode: the plain accent pink */
+:root[data-theme='dark'] .home-art pre {
+    color: var(--accent);
 }
 
 .home-name {
