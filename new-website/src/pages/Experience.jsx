@@ -4,7 +4,7 @@ import './css/Experience.css'
 
 const EXPERIENCE = [
     {
-        title: 'Software Engineer I',
+        title: 'Software Engineer',
         dates: '2026 – Present',
         subtitle: 'Collins Aerospace',
         current: true,

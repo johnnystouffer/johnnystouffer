@@ -27,8 +27,6 @@ function App() {
   useKeyboardNav()
   const { loaded, total, ready } = useImagesReady(BACKGROUND_SRCS)
 
-  // Hold the site back until both background photos are decoded. The loader
-  // stays in the same spot in the tree so it can fade out over the site.
   return (
     <>
       <Loader loaded={loaded} total={total} done={ready} />
@@ -36,12 +34,13 @@ function App() {
         <>
           <Background />
           <NavBar>
-            <Radio
+            {/* Actual Radio for a later update */}
+            {/* <Radio
               image={music}
               alt=""
               title="Kayokyoku"
               artist="Taeko Onuki"
-            />
+            /> */}
           </NavBar>
           <div className="main-content">
             <Routes>

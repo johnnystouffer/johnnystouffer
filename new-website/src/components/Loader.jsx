@@ -18,8 +18,10 @@ export default function Loader({ loaded, total, done }) {
     >
       <div className="loader-inner">
         <div className="loader-label">
-          <span className="loader-marker" aria-hidden="true" />
-          <span>Loading</span>
+          <span>
+            <span className="loader-marker" aria-hidden="true">/</span>
+            Loading
+          </span>
           <span className="loader-count">
             {loaded}/{total}
           </span>

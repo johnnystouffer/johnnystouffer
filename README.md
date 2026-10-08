@@ -16,7 +16,7 @@
 
 <p align="center">
   <img src="./resources/rtxlogo.svg.png" width="46" align="middle"/>
-  &nbsp;&nbsp;<b>Software Engineer I</b>
+  &nbsp;&nbsp;<b>Software Engineer</b>
   <br>
   <sub>Collins Aerospace</sub> &nbsp;•&nbsp; <sub>Present</sub>
   <br>

@@ -46,7 +46,7 @@ export default function Home() {
             <h1 className="home-name">John Stouffer</h1>
             <span className="home-rule" aria-hidden="true" />
 
-            <p className="home-role">Software Engineer I @ Collins Aerospace</p>
+            <p className="home-role">Software Engineer @ Collins Aerospace</p>
 
             <p className="home-intro">
                 Welcome to my page, where I post my thoughts on media, tech, economics, and random topics I find interesting at 3am. Enjoy your stay!

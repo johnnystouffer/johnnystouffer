@@ -8,20 +8,20 @@
   padding: 0.35rem 0.9rem 0.45rem;
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.02rem;
   color: var(--muted);
 
   background-color: var(--background-color);
   border: 1px solid var(--line);
   border-top: none;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 12px 12px;
   cursor: pointer;
   transition: color 0.15s, padding 0.2s ease;
 }
 
 .radio-toggle:hover,
 .radio-toggle.is-open {
-  color: var(--accent);
+  color: var(--text-color);
 }
 
 .radio-toggle:hover {
@@ -45,14 +45,15 @@
 
   width: 36rem;
   max-width: calc(100% - 2rem);
-  height: 14rem;
+  height: 15.5rem;
   display: flex;
   gap: 1.5rem;
   padding: 1.25rem 1.25rem 1.25rem;
   box-sizing: border-box;
   overflow: hidden;
 
-  background-color: var(--background-color);
+  background-color: var(--panel-bg);
+  backdrop-filter: blur(12px);
   border: 1px solid var(--line);
   border-bottom: none;
   border-radius: 12px 12px 0 0;
@@ -66,14 +67,16 @@
   transform: none;
 }
 
-/* Left: square album art, inset with a soft shadow. */
+/* Left: square album art, framed like the ratings artwork. */
 .radio-image {
   flex: 0 0 auto;
   height: 100%;
   aspect-ratio: 1;
   max-width: 40%;
   align-self: center;
-  border-radius: 8px;
+  box-sizing: border-box;
+  border: 1px solid var(--line);
+  background: var(--surface);
   overflow: hidden;
 }
 
@@ -84,7 +87,7 @@
   display: block;
 }
 
-/* Right: label row, title + artist, visualizer, footer. Drifts up just
+/* Right: label row, title + artist beside the visualizer, controls. Drifts up just
    behind the panel. Styled after the blog index: mono uppercase labels on
    hairline rules, accent square markers, a light oversized title. */
 .radio-body {
@@ -107,21 +110,30 @@
   transition-delay: 0.15s;
 }
 
-.radio-label,
-.radio-footer {
+.radio-label {
   display: flex;
   align-items: center;
   gap: 0.5rem;
   font-family: var(--font-mono);
-  font-size: 0.65rem;
+  font-size: 0.7rem;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--muted);
 }
 
 .radio-label {
-  padding-bottom: 0.5rem;
+  padding-bottom: 0.6rem;
   border-bottom: 1px solid var(--line);
+}
+
+/* Plain pink mono, slash-prefixed, like the blog tags: /RADIO */
+.radio-tag {
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+
+.radio-tag::before {
+  content: '/';
 }
 
 .radio-close {
@@ -138,7 +150,7 @@
 }
 
 .radio-close:hover {
-  color: var(--accent);
+  color: var(--text-color);
 }
 
 .radio-close:focus-visible {
@@ -146,7 +158,17 @@
   outline-offset: 3px;
 }
 
+/* Middle row: info fills the left, the visualizer box sits right. */
+.radio-middle {
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
 .radio-info {
+  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 0.35rem;
@@ -154,9 +176,9 @@
 }
 
 .radio-title {
-  font-size: 1.9rem;
+  font-size: 1.6rem;
   font-weight: 300;
-  line-height: 1.05;
+  line-height: 1.1;
   letter-spacing: -0.03em;
   color: var(--text-color);
   overflow: hidden;
@@ -165,42 +187,41 @@
 }
 
 .radio-artist {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: -0.01em;
+  font-size: 0.88rem;
+  letter-spacing: 0.02rem;
   color: var(--accent);
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-/* Visualizer: bars bounce from the baseline, only while the panel is open.
-   It takes whatever height is left over. */
+/* Visualizer: a small hairline box; bars bounce from its floor only while
+   the panel is open and playing. */
 .radio-bars {
-  flex: 1;
-  min-height: 1.5rem;
+  flex: 0 0 auto;
+  width: 7rem;
+  height: 3.25rem;
+  box-sizing: border-box;
   display: flex;
   align-items: flex-end;
-  gap: 3px;
-  border-bottom: 1px solid var(--line);
+  gap: 2px;
+  padding: 0.35rem 0.4rem 0;
+  border: 1px solid var(--line);
+  background: var(--surface);
 }
 
 .radio-bars span {
   flex: 1;
   height: 100%;
-  border-radius: 2px 2px 0 0;
-  background: linear-gradient(
-    to top,
-    var(--accent),
-    color-mix(in srgb, var(--accent) 45%, transparent)
-  );
+  background: var(--accent);
+  transition: transform 0.3s ease;
   transform-origin: bottom;
   transform: scaleY(0.1);
   animation: radio-bar var(--duration) ease-in-out var(--delay) infinite alternate;
   animation-play-state: paused;
 }
 
-.radio.is-open .radio-bars span {
+.radio.is-open.is-connected .radio-bars span {
   animation-play-state: running;
 }
 
@@ -211,18 +232,187 @@
   100% { transform: scaleY(var(--peak)); }
 }
 
-.radio-footer {
+/* Controls: connection on the left, volume on the right, on a hairline. */
+.radio-controls {
+  display: flex;
+  align-items: center;
   justify-content: space-between;
+  gap: 1rem;
+  min-height: 2rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
 }
 
+.radio-connect {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: var(--muted);
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.15s;
+}
+
+.radio-connect:hover,
+.radio.is-connected .radio-connect {
+  color: var(--text-color);
+}
+
+.radio-connect .radio-key {
+  color: var(--muted);
+}
+
+/* Status circle: hollow when disconnected, half-filled while connecting,
+   solid once connected. */
+.radio-status-dot {
+  width: 0.65rem;
+  height: 0.65rem;
+  box-sizing: border-box;
+  border: 1.5px solid var(--accent);
+  border-radius: 50%;
+  background: transparent;
+  transition: background 0.2s;
+}
+
+.radio.is-connecting .radio-status-dot {
+  background: linear-gradient(to right, var(--accent) 50%, transparent 50%);
+  animation: radio-pulse 1s ease-in-out infinite alternate;
+}
+
+.radio.is-connected .radio-status-dot {
+  background: var(--accent);
+}
+
+@keyframes radio-pulse {
+  to { opacity: 0.45; }
+}
+
+/* Volume: a plain hairline track that fills with the accent. */
+/* Shrinks with the panel rather than overflowing on narrow screens. */
+.radio-volume {
+  flex: 0 1 8rem;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+}
+
+.radio-volume input {
+  appearance: none;
+  flex: 1;
+  min-width: 2.5rem;
+  width: 100%;
+  height: 2px;
+  margin: 0;
+  background: linear-gradient(
+    to right,
+    var(--accent) var(--fill),
+    var(--line) var(--fill)
+  );
+  cursor: pointer;
+}
+
+.radio-volume input::-webkit-slider-thumb {
+  appearance: none;
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: var(--accent);
+  border: none;
+}
+
+.radio-volume input::-moz-range-thumb {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 50%;
+  background: var(--accent);
+  border: none;
+}
+
+.radio-volume:hover {
+  color: var(--text-color);
+}
+
+.radio-connect:focus-visible,
+.radio-volume input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* Phones: one stacked card instead of art-beside-everything. The body and
+   middle row dissolve (display: contents) so their pieces sit on one grid:
+   label across the top, small art + title + visualizer, then controls. */
 @media (max-width: 550px) {
   .radio {
-    gap: 1rem;
-    padding: 1rem;
+    display: grid;
+    grid-template-columns: 4.25rem minmax(0, 1fr) auto;
+    grid-template-areas:
+      'label label label'
+      'art   info  bars'
+      'ctrl  ctrl  ctrl';
+    align-items: center;
+    gap: 0.9rem;
+    height: auto;
+    padding: 1rem 1rem calc(1rem + env(safe-area-inset-bottom));
+  }
+
+  .radio-body,
+  .radio-middle {
+    display: contents;
+  }
+
+  .radio-label    { grid-area: label; }
+  .radio-info     { grid-area: info; }
+  .radio-bars     { grid-area: bars; }
+  .radio-controls { grid-area: ctrl; }
+
+  .radio-image {
+    grid-area: art;
+    width: 100%;
+    height: auto;
+    max-width: none;
   }
 
   .radio-title {
     font-size: 1.35rem;
+  }
+
+  .radio-bars {
+    width: 4.75rem;
+    height: 2.6rem;
+  }
+
+  /* No keyboard, so no shortcut hints. */
+  .radio-key {
+    display: none;
+  }
+}
+
+/* Very narrow phones: shrink the art and visualizer so the title fits. */
+@media (max-width: 360px) {
+  .radio {
+    grid-template-columns: 3.5rem minmax(0, 1fr) auto;
+    gap: 0.75rem;
+  }
+
+  .radio-bars {
+    width: 3.5rem;
+  }
+
+  .radio-title {
+    font-size: 1.2rem;
   }
 }
 
@@ -236,5 +426,8 @@
   .radio-bars span {
     animation: none;
     transform: scaleY(calc(var(--peak) * 0.6));
+  }
+  .radio.is-connecting .radio-status-dot {
+    animation: none;
   }
 }

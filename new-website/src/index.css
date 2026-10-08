@@ -25,10 +25,13 @@
   --code-punct: #6f9c8f;
 
   --font-mono: 'IBM Plex Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-  --font-body: 'IBM Plex Serif', Georgia, 'Times New Roman', serif;
-  --font-heading: 'Lora', 'IBM Plex Serif', Georgia, serif;
+  --font-body: 'EB Garamond', Garamond, Georgia, 'Times New Roman', serif;
+  --font-heading: var(--font-body);
 
+  /* Garamond runs small on screen; 17px base keeps it readable */
+  font-size: 106.25%;
   font-family: var(--font-body);
+  font-variant-numeric: oldstyle-nums;
 
   background-color: var(--background-color);
   color: var(--text-color);

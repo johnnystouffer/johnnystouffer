@@ -16,7 +16,7 @@ export default function Background() {
       {Object.entries(BACKGROUNDS).map(([name, src]) => (
         <div
           key={name}
-          className={`bg-photo${theme === name ? ' is-active' : ''}`}
+          className={`bg-photo bg-photo--${name}${theme === name ? ' is-active' : ''}`}
           style={{ backgroundImage: `url(${src})` }}
         />
       ))}

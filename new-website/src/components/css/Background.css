@@ -18,3 +18,13 @@
 .bg-photo.is-active {
   opacity: 1;
 }
+
+/* dark photo: greyscale, then a faint purple wash (sepia's warm tint
+   rotated round to violet) */
+.bg-photo--dark {
+  filter: grayscale(1) sepia(0.2) hue-rotate(225deg) saturate(1.8) brightness(0.25);
+}
+
+.bg-photo--light {
+  filter: grayscale(1) hue-rotate(225deg) saturate(1.8) brightness(1.1);
+}
