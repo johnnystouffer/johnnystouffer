@@ -4,3 +4,4 @@ js-personal-website/next-env.d.ts
 
 .DS_Store
 **/.DS_Store
+.vercel
