@@ -11,7 +11,7 @@ export default function ThemeToggle() {
             className="theme-toggle"
             onClick={toggleTheme}
             aria-pressed={isDark}
-            aria-label={`Switch to ${isDark ? 'light' : 'dark'} theme`}
+            aria-label={`Switch Theme [T]`}
         >
             <span aria-hidden="true">{isDark ? '☀' : '☾'}</span>
             {isDark ? 'LIGHT MODE' : 'DARK MODE'} [T]

@@ -3,11 +3,19 @@ import { Link } from 'react-router-dom'
 import './css/Navbar.css'
 
 const links = [
-  { to: '/', label: 'HOME [H]' },
-  { to: '/experience', label: 'EXPERIENCE [E]' },
-  { to: '/blog', label: 'BLOG [B]' },
-  { to: '/ratings', label: 'RATINGS [R]' },
+  { to: '/', label: 'HOME' },
+  { to: '/experience', label: 'EXPERIENCE' },
+  { to: '/blog', label: 'BLOG' },
+  { to: '/ratings', label: 'RATINGS' },
 ]
+
+// Underline the first letter of each tab, like a menu-bar access key.
+const renderLabel = (label) => (
+  <>
+    <span className="navbar-key">{label[0]}</span>
+    {label.slice(1)}
+  </>
+)
 
 export default function Navbar({ children }) {
   const [open, setOpen] = useState(false)
@@ -21,7 +29,7 @@ export default function Navbar({ children }) {
       <ul className="navbar-links">
         {links.map(({ to, label }) => (
           <li key={to}>
-            <Link to={to}>{label}</Link>
+            <Link to={to}>{renderLabel(label)}</Link>
           </li>
         ))}
       </ul>
@@ -46,7 +54,7 @@ export default function Navbar({ children }) {
           {links.map(({ to, label }) => (
             <li key={to}>
               <Link to={to} onClick={() => setOpen(false)}>
-                {label}
+                {renderLabel(label)}
               </Link>
             </li>
           ))}

@@ -49,7 +49,7 @@ const EDUCATION = [
     {
         title: 'Michigan State University',
         location: 'East Lansing, MI',
-        subtitle: 'B.S. Computer Science | Dean’s List 6x | GPA: 3.82',
+        subtitle: 'B.S. Computer Science | Dean’s List 8x | GPA: 3.82',
         dates: 'May 2026',
     },
 ]

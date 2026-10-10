@@ -1,15 +1,17 @@
 :root {
+  --panel-bg: #F7F3EE;
+  --panel-pad: clamp(1.5rem, 4vw, 3rem);
+  
   --text-color: #000000;
-  --background-color: #fafafa;
+  --background-color: color-mix(in srgb, var(--panel-bg) 97%, black);
   --accent: #D39090;
+  --wave-color: color-mix(in srgb, var(--accent) 35%, transparent);
 
   --accent-soft: color-mix(in srgb, var(--accent) 12%, transparent);
   --muted: color-mix(in srgb, var(--text-color) 55%, transparent);
   --surface: color-mix(in srgb, var(--text-color) 5%, transparent);
   --line: color-mix(in srgb, var(--text-color) 16%, transparent);
 
-  --panel-bg: color-mix(in srgb, var(--background-color) 95%, transparent);
-  --panel-pad: clamp(1.5rem, 4vw, 3rem);
 
   --menu-bg: var(--background-color);
   --menu-border: var(--line);
@@ -28,8 +30,7 @@
   --font-body: 'EB Garamond', Garamond, Georgia, 'Times New Roman', serif;
   --font-heading: var(--font-body);
 
-  /* Garamond runs small on screen; 17px base keeps it readable */
-  font-size: 106.25%;
+  font-size: 106.25%; /* EB Garamond looks smaller than other fonts*/
   font-family: var(--font-body);
   font-variant-numeric: oldstyle-nums;
 
@@ -38,7 +39,7 @@
 }
 
 #root {
-  width: min(950px, 92%);
+  width: min(1100px, 88%);
   margin-inline: auto;
   height: 100vh;
   display: flex;
@@ -54,9 +55,12 @@
 }
 
 :root[data-theme='dark'] {
+
+  --panel-bg: #1C1A1A;
   --text-color: #f5f5f5;
-  --background-color: #000000;
-  --accent: #c81578;
+  --accent: #0b0a0a;
+  --background-color: color-mix(in srgb, var(--panel-bg) 85%, black);
+  --wave-color: color-mix(in srgb, #DCA1A1 14%, transparent);
 
   --code-bg: color-mix(in srgb, white 6%, var(--background-color));
   --code-border: var(--line);
@@ -74,8 +78,10 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme='light']) {
+    --panel-bg: #1C1A1A;
     --text-color: #f5f5f5;
-    --background-color: #1C1A1A;
+    --background-color: color-mix(in srgb, var(--panel-bg) 85%, black);
+    --wave-color: color-mix(in srgb, #DCA1A1 14%, transparent);
     --accent: #DCA1A1;
 
     --code-bg: color-mix(in srgb, white 6%, var(--background-color));

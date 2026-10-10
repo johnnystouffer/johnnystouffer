@@ -1,4 +1,4 @@
-import ThemeToggle from '../components/ThemeToggle.jsx'
+import useTheme from '../utils/useTheme.js'
 import art from '../assets/home-art.txt?raw'
 
 import './css/Home.css'
@@ -27,16 +27,31 @@ const ICONS = {
             <path d="M14 3v5h5M9 13h6M9 17h6" />
         </svg>
     ),
+    sun: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+        </svg>
+    ),
+    moon: (
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+    ),
 }
 
 const CONTACTS = [
-    ['Email', 'email', 'mailto:stouff17@msu.edu'],
+    ['Email', 'email', 'mailto:johnstouffer18@msu.edu'],
     ['LinkedIn', 'linkedin', 'https://www.linkedin.com/in/johnny-stouffer/'],
     ['GitHub', 'github', 'https://github.com/johnnystouffer'],
     ['Resume (PDF)', 'resume', '/John_Stouffer_Resume_Master.pdf'],
 ]
 
 export default function Home() {
+    const { theme, toggleTheme } = useTheme()
+    const isDark = theme === 'dark'
+    const themeLabel = `Switch Theme [T]`
+
     return (
         <div className="home">
             <div className="home-art" aria-hidden="true">
@@ -49,7 +64,7 @@ export default function Home() {
             <p className="home-role">Software Engineer @ Collins Aerospace</p>
 
             <p className="home-intro">
-                Welcome to my page, where I post my thoughts on media, tech, economics, and random topics I find interesting at 3am. Enjoy your stay!
+                Geography Nut · Ancient History Nerd · Minecraft Fiend · Tech Junkie
             </p>
             <ul className="home-contacts">
                 {CONTACTS.map(([label, icon, href]) => (
@@ -64,10 +79,18 @@ export default function Home() {
                         </a>
                     </li>
                 ))}
+                <li>
+                    <button
+                        type="button"
+                        onClick={toggleTheme}
+                        aria-pressed={isDark}
+                        aria-label={themeLabel}
+                        title={themeLabel}
+                    >
+                        {ICONS[isDark ? 'sun' : 'moon']}
+                    </button>
+                </li>
             </ul>
-
-            <ThemeToggle />
-
         </div>
     )
 }

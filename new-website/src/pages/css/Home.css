@@ -23,7 +23,7 @@
 .home-art pre {
     margin: 0;
     font-family: var(--font-mono);
-    font-size: min(12px, calc(100cqi / (65 * 0.6)));
+    font-size: min(14px, calc(120cqi / (65 * 0.6)));
     line-height: 1;
     letter-spacing: 0;
     white-space: pre;
@@ -39,7 +39,7 @@
 }
 
 .home-name {
-    font-size: clamp(3rem, 11vw, 6rem);
+    font-size: clamp(3rem, 11vw, 5rem);
     font-weight: 400;
     line-height: 1;
     letter-spacing: -0.03em;
@@ -74,7 +74,7 @@
 .home-intro {
     max-width: 30rem;
     margin: 1.75rem 0 0;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     line-height: 1.65;
 }
 
@@ -86,14 +86,21 @@
     gap: 1.6rem;
 }
 
-.home-contacts a {
+.home-contacts a,
+.home-contacts button {
     display: block;
+    padding: 0;
     color: var(--muted);
+    background: none;
+    border: none;
+    cursor: pointer;
     transition: color 0.15s;
 }
 
 .home-contacts a:hover,
-.home-contacts a:focus-visible {
+.home-contacts a:focus-visible,
+.home-contacts button:hover,
+.home-contacts button:focus-visible {
     color: var(--accent);
 }
 
@@ -101,10 +108,5 @@
     display: block;
     width: 1.85rem;
     height: 1.85rem;
-}
-
-.home .theme-toggle {
-    margin-top: 1.75rem;
-    color: var(--muted);
 }
 

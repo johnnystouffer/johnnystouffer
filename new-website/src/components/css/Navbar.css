@@ -101,15 +101,24 @@
   font-size: 0.8rem;
   letter-spacing: 0.02rem;
   color: var(--muted);
-  padding-bottom: 0.2rem;
-  border-bottom: 1px solid transparent;
-  transition: color 0.15s, border-color 0.15s;
+  transition: color 0.15s;
 }
 
 .navbar-links a:hover,
 .navbar-menu a:hover {
-  color: var(--text-color);
-  border-bottom-color: var(--accent);
+  /* same pink as the home art: deepened in light mode, plain in dark */
+  color: color-mix(in srgb, var(--accent) 99%, black);
+}
+
+:root[data-theme='dark'] .navbar-links a:hover,
+:root[data-theme='dark'] .navbar-menu a:hover {
+  color: var(--accent);
+}
+
+.navbar-key {
+  text-decoration: underline;
+  text-decoration-thickness: 1.25px;
+  text-underline-offset: 0.2em;
 }
 
 .navbar-toggle { color: var(--text-color); }
