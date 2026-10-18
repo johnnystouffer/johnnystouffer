@@ -58,7 +58,7 @@
 
   --panel-bg: #1C1A1A;
   --text-color: #f5f5f5;
-  --accent: #0b0a0a;
+  --accent: #DCA1A1;
   --background-color: color-mix(in srgb, var(--panel-bg) 85%, black);
   --wave-color: color-mix(in srgb, #DCA1A1 14%, transparent);
 
