@@ -10,66 +10,86 @@
 
 <p align="center">I'm a <b>Software Engineer I</b> at <b>Collins Aerospace</b> that works on mainly <b>Embedded Systems in C++</b>.</p>
 
-<p align="center">On the side I occassionally like to make Weekend project, which is usually <b>Full Stack Development</b> using <b>React</b> and various backend frameworks <b>(Spring Boot, Flask, Django, etc.)</b></p>
+<p align="center">On the side I occasionally like to make weekend projects, which are usually <b>Full Stack Development</b> using <b>React</b> and various backend frameworks <b>(Spring Boot, Flask, Django, etc.)</b></p>
 
 <h2 align="center">Experience</h2>
 
-<p align="center">
-  <img src="./resources/rtxlogo.svg.png" width="46" align="middle"/>
-  &nbsp;&nbsp;<b>Software Engineer</b>
-  <br>
-  <sub>Collins Aerospace</sub> &nbsp;•&nbsp; <sub>Present</sub>
-  <br>
-  <sub>Working on real-time mission system technology</sub>
-</p>
-
-<p align="center">
-  <img src="./resources/rtxlogo.svg.png" width="46" align="middle"/>
-  &nbsp;&nbsp;<b>Software Engineering Intern</b>
-  <br>
-  <sub>Collins Aerospace</sub> &nbsp;•&nbsp; <sub>Summer 2025</sub>
-  <br>
-  <sub>Built real-time GPS filtering + predictive mapping</sub>
-</p>
-
-<p align="center">
-  <img src="./resources/teslalogonew.png" width="46" align="middle"/>
-  &nbsp;&nbsp;<b>Software Intern</b>
-  <br>
-  <sub>Tesla</sub> &nbsp;•&nbsp; <sub>Summer 2024</sub>
-  <br>
-  <sub>Automated KPI dashboards + data pipelines</sub>
-</p>
-
-<p align="center">
-  <img src="./resources/msulogo.svg.png" width="46" align="middle"/>
-  &nbsp;&nbsp;<b>DSA Teaching Assistant</b>
-  <br>
-  <sub>Michigan State University</sub> &nbsp;•&nbsp; <sub>'25 - '26</sub>
-  <br>
-  <sub>Supported 300+ students in DSA</sub>
-</p>
+<div align="center">
+<table>
+  <tr>
+    <td width="70" align="center" valign="middle">
+      <img src="./resources/rtxlogo.svg.png" width="46"/>
+    </td>
+    <td align="left" valign="middle">
+      <b>Software Engineer</b> - Collins Aerospace<br>
+      <sub>Working on real-time mission system technology</sub>
+    </td>
+    <td align="right" valign="middle" width="140">
+      <sub>July 26 - Present</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="70" align="center" valign="middle">
+      <img src="./resources/rtxlogo.svg.png" width="46"/>
+    </td>
+    <td align="left" valign="middle">
+      <b>Software Engineering Intern</b> - Collins Aerospace<br>
+      <sub>Built real-time GPS filtering + predictive mapping</sub>
+    </td>
+    <td align="right" valign="middle" width="140">
+      <sub>Summer 2025</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="70" align="center" valign="middle">
+      <img src="./resources/teslalogonew.png" width="46"/>
+    </td>
+    <td align="left" valign="middle">
+      <b>Software Intern</b> - Tesla<br>
+      <sub>Automated KPI dashboards + data pipelines</sub>
+    </td>
+    <td align="right" valign="middle" width="140">
+      <sub>Summer 2024</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="70" align="center" valign="middle">
+      <img src="./resources/msulogo.svg.png" width="46"/>
+    </td>
+    <td align="left" valign="middle">
+      <b>DSA Teaching Assistant</b> - Michigan State University<br>
+      <sub>Supported 300+ students in DSA</sub>
+    </td>
+    <td align="right" valign="middle" width="140">
+      <sub>Jan 2025 - May 2026</sub>
+    </td>
+  </tr>
+</table>
+</div>
 
 
 <h2 align="center">Projects</h2>
 
-<p align="center">
-  <img src="./resources/omlogo.png" width="46" align="middle" alt="Odyssey Maps"/>
-  &nbsp;&nbsp;<a href="https://odysseymaps.com"><b>Odyssey Maps</b></a>
-  <br>
-  <sub>React • Spring Boot • PostgreSQL</sub>
-  <br>
-  <sub>Track Mario Odyssey progress across 15 kingdoms</sub>
-</p>
-
-<p align="center">
-  <img src="./resources/focus.svg.png" width="46" align="middle" alt="FocusTube"/>
-  &nbsp;&nbsp;<a href="https://focus-youtube.vercel.app/"><b>FocusTube</b></a>
-  <br>
-  <sub>Next.js • Tailwind • YouTube API</sub>
-  <br>
-  <sub>Distraction-free YouTube wrapper</sub>
-</p>
+<div align="center">
+<table>
+  <tr>
+    <td width="50%" align="left" valign="top">
+      <img src="./resources/omlogo.png" width="46" align="left" alt="Odyssey Maps"/>
+      &nbsp;<a href="https://odysseymaps.com"><b>Odyssey Maps</b></a><br>
+      &nbsp;<sub><code>React</code> <code>Spring Boot</code> <code>PostgreSQL</code></sub>
+      <br clear="all"><br>
+      Track Mario Odyssey progress across 15 kingdoms.
+    </td>
+    <td width="50%" align="left" valign="top">
+      <img src="./resources/focus.svg.png" width="46" align="left" alt="FocusTube"/>
+      &nbsp;<a href="https://focus-youtube.vercel.app/"><b>FocusTube</b></a><br>
+      &nbsp;<sub><code>Next.js</code> <code>Tailwind</code> <code>YouTube API</code></sub>
+      <br clear="all"><br>
+      Distraction-free YouTube wrapper.
+    </td>
+  </tr>
+</table>
+</div>
 
 <h2 align="center">Languages and Tools</h2>
 
