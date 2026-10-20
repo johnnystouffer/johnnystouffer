@@ -12,7 +12,7 @@
     padding-block: 3rem;
 }
 
-/* TODO: DONE: Braille art, 65 columns wide. Fixed size, but it shrinks to fit narrow
+/* Braille art, 65 columns wide. Fixed size, but it shrinks to fit narrow
    screens (65 cols x 0.7em per glyph). IBM Plex Mono has no braille so
    without a font that does each OS falls back differently (windows picks
    fonts whose blank and dotted cells differ in width so rows misalign).

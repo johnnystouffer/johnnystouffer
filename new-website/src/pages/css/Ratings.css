@@ -88,7 +88,6 @@
 }
 
 .ratings-row-score {
-    font-family: var(--font-mono);
     font-size: 0.85rem;
     color: var(--accent);
     text-align: right;
@@ -206,7 +205,6 @@
 
 .ratings-review-score {
     flex-shrink: 0;
-    font-family: var(--font-mono);
     font-size: 1.8rem;
     line-height: 1;
     color: var(--accent);
