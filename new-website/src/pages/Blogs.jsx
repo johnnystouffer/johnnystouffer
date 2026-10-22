@@ -100,8 +100,7 @@ export default function Blogs() {
 
                 <section className="blogs-results">
                     <div className="blogs-columns">
-                        <span className="blogs-label">Date</span>
-                        <span className="blogs-label">Name</span>
+                        <span className="blogs-label">Post</span>
                     </div>
 
                     {visible.length === 0 && (
@@ -113,10 +112,23 @@ export default function Blogs() {
                     <ul className="blogs-list">
                         {visible.map(({ slug, meta }) => (
                             <li key={slug}>
-                                <Link to={`/blog/${slug}`} className="blogs-row">
-                                    <span className="blogs-row-marker" aria-hidden="true" />
-                                    <time className="blogs-row-date">{formatDateShort(meta.date)}</time>
-                                    <span className="blogs-row-title">{meta.title ?? slug}</span>
+                                <Link to={`/blog/${slug}`} className={`blogs-row${meta.image ? ' has-thumb' : ''}`}>
+                                    {meta.image && (
+                                        <span className="blogs-row-thumb" aria-hidden="true">
+                                            <img src={meta.image} alt="" loading="lazy" />
+                                        </span>
+                                    )}
+                                    <span className="blogs-row-main">
+                                        <span className="blogs-row-meta">
+                                            <time className="blogs-row-date">{formatDateShort(meta.date)}</time>
+                                            {meta.tags?.length > 0 && (
+                                                <span className="blogs-row-tags">{meta.tags.join(' · ')}</span>
+                                            )}
+                                        </span>
+                                        <span className="blogs-row-title">{meta.title ?? slug}</span>
+                                        {meta.description && <span className="blogs-row-summary">{meta.description}</span>}
+                                    </span>
+                                    <span className="blogs-row-plus" aria-hidden="true">→</span>
                                 </Link>
                             </li>
                         ))}
