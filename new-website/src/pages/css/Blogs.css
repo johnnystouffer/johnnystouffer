@@ -190,7 +190,7 @@
 /* results */
 .blogs-columns {
     display: grid;
-    grid-template-columns: 5.6rem minmax(0, 1fr);
+    grid-template-columns: minmax(0, 1fr);
     gap: 1.5rem;
 }
 
@@ -207,53 +207,117 @@
     margin: 0;
 }
 
+/* card: optional cover thumbnail, date and tags, title, description.
+   Same rhythm as the ratings cards (Ratings.css). */
 .blogs-row {
+    --thumb: 6.5rem;
     display: grid;
-    grid-template-columns: 0.5rem 5.6rem minmax(0, 1fr) auto;
+    grid-template-columns: minmax(0, 1fr) 1rem;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.7rem 0;
+    gap: 1.1rem;
+    padding: 1rem 0;
     min-width: 0;
-    overflow: hidden;
     border-bottom: 1px solid var(--line);
     color: inherit;
     text-decoration: none;
 }
 
-.blogs-row-marker {
-    width: 0.4rem;
-    height: 0.4rem;
-    background: var(--accent);
+.blogs-row.has-thumb {
+    grid-template-columns: var(--thumb) minmax(0, 1fr) 1rem;
+}
+
+.blogs-row:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* blog covers are landscape, unlike the poster/album art on ratings */
+.blogs-row-thumb {
+    align-self: start;
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    overflow: hidden;
+}
+
+.blogs-row-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.blogs-row-main {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    min-width: 0;
+}
+
+.blogs-row-meta {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.25rem 0.75rem;
 }
 
 .blogs-row-date {
-    font-family: var(--font-mono);
-    font-size: 0.88rem;
+    font-family: var(--font-body);
+    font-size: 1rem;
     letter-spacing: -0.02em;
     color: var(--accent);
     white-space: nowrap;
 }
 
-.blogs-row-title {
-    min-width: 0;
-    font-size: 1.15rem;
-    font-weight: 400;
-    letter-spacing: -0.01em;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.blogs-row-tags {
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    color: var(--muted);
 }
 
-.blogs-row-plus {
-    font-family: var(--font-mono);
-    color: var(--muted);
+.blogs-row-title {
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
     transition: color 0.15s;
 }
 
+.blogs-row-summary {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    font-style: italic;
+    color: var(--muted);
+}
+
+.blogs-row-plus {
+    align-self: start;
+    font-family: var(--font-mono);
+    color: var(--muted);
+    text-align: center;
+    transition: color 0.15s, transform 0.25s ease;
+}
+
 .blogs-row:hover .blogs-row-title { color: var(--accent); }
-.blogs-row:hover .blogs-row-plus { color: var(--text-color); }
+.blogs-row:hover .blogs-row-plus { color: var(--text-color); transform: translateX(0.2rem); }
 
 @media (max-width: 600px) {
-    .blogs-row { grid-template-columns: 0.5rem 5.6rem minmax(0, 1fr) auto; }
-    .blogs-row-title { white-space: normal; font-size: 1.05rem; }
+    .blogs-row {
+        --thumb: 4.5rem;
+        gap: 0.8rem;
+    }
+
+    .blogs-row-title {
+        font-size: 1.3rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .blogs-row-plus {
+        transition: none;
+    }
 }
