@@ -1,5 +1,5 @@
-import { useEffect, useMemo, useState } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useEffect, useMemo, useRef, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 import BlogParser from '../components/BlogParser.jsx'
 import { formatDateShort } from '../utils/blogs.js'
 import { ratings } from '../utils/ratings.js'
@@ -23,6 +23,7 @@ function RatingRow({ slug, meta, markdown, open, onToggle }) {
     const panelId = `rating-${slug}`
     const details = [meta.type, meta.creator, meta.year].filter(Boolean).join(' · ')
     const shape = SQUARE_TYPES.has(meta.type) ? 'is-square' : 'is-poster'
+    const alt = meta.alt ?? `${meta.title ?? slug} artwork`
 
     return (
         <li className={`ratings-item${open ? ' is-open' : ''}`}>
@@ -33,13 +34,22 @@ function RatingRow({ slug, meta, markdown, open, onToggle }) {
                 aria-controls={panelId}
                 onClick={onToggle}
             >
-                <span className="ratings-row-marker" aria-hidden="true" />
-                <time className="ratings-row-date">{formatDateShort(meta.date)}</time>
-                <span className="ratings-row-title">
-                    {meta.title ?? slug}
-                    {meta.type && <span className="ratings-row-type">{meta.type}</span>}
+                {/* the thumbnail hands off to the full artwork once the panel opens */}
+                <span className={`ratings-row-thumb ${shape}`} aria-hidden="true">
+                    {meta.image ? <img src={meta.image} alt="" loading="lazy" /> : <span className="ratings-media-empty">{meta.type}</span>}
                 </span>
-                <span className="ratings-row-score">{formatRating(meta.rating)}</span>
+                <span className="ratings-row-main">
+                    <span className="ratings-row-meta">
+                        <time className="ratings-row-date">{formatDateShort(meta.date)}</time>
+                        {details && <span className="ratings-row-type">{details}</span>}
+                    </span>
+                    <span className="ratings-row-title">{meta.title ?? slug}</span>
+                    {meta.summary && <span className="ratings-row-summary">{meta.summary}</span>}
+                </span>
+                <span className="ratings-row-score">
+                    {formatRating(meta.rating)}
+                    <span>/10</span>
+                </span>
                 <span className="ratings-row-plus" aria-hidden="true">{open ? '−' : '+'}</span>
             </button>
 
@@ -49,24 +59,13 @@ function RatingRow({ slug, meta, markdown, open, onToggle }) {
                     <div className="ratings-detail">
                         <div className={`ratings-media ${shape}`}>
                             {meta.image ? (
-                                <img src={meta.image} alt={meta.alt ?? `${meta.title} artwork`} loading="lazy" />
+                                <img src={meta.image} alt={alt} loading="lazy" />
                             ) : (
                                 <span className="ratings-media-empty">{meta.type ?? 'No image'}</span>
                             )}
                         </div>
 
                         <div className="ratings-review">
-                            <div className="ratings-review-head">
-                                <div>
-                                    <h3 className="ratings-review-title">{meta.title ?? slug}</h3>
-                                    {details && <div className="ratings-review-meta">{details}</div>}
-                                </div>
-                                <div className="ratings-review-score">
-                                    {formatRating(meta.rating)}
-                                    <span>/10</span>
-                                </div>
-                            </div>
-                            {meta.summary && <p className="ratings-review-summary">{meta.summary}</p>}
                             <BlogParser markdown={markdown} showHeader={false} />
                         </div>
                     </div>
@@ -81,17 +80,35 @@ export default function Ratings() {
     const [sort, setSort] = useState('newest')
     const [types, setTypes] = useState(() => new Set())
     const { hash } = useLocation()
-    const [open, setOpen] = useState(() => new Set())
+    const navigate = useNavigate()
 
-    // /ratings#slug (linked from the home page) opens that review and scrolls to it.
+    // The URL is the source of truth: /ratings#slug opens that one review, so any
+    // open review can be shared by copying the address bar.
+    const openSlug = decodeURIComponent(hash.slice(1))
+    const firstScroll = useRef(true)
+
     useEffect(() => {
-        const slug = decodeURIComponent(hash.slice(1))
-        if (!slug) return
-        setOpen((prev) => new Set(prev).add(slug))
-        requestAnimationFrame(() =>
-            document.getElementById(`rating-${slug}`)?.closest('li')?.scrollIntoView({ block: 'start', behavior: 'smooth' })
-        )
-    }, [hash])
+        if (!openSlug) return
+        const scroll = () => {
+            const item = document.getElementById(`rating-${openSlug}`)?.closest('li')
+            if (!item) return
+            const { top } = item.getBoundingClientRect()
+            if (firstScroll.current || top < 0 || top > window.innerHeight * 0.6)
+                item.scrollIntoView({ block: 'start', behavior: firstScroll.current ? 'auto' : 'smooth' })
+            firstScroll.current = false
+        }
+        // On a click, wait for the previously open review to finish collapsing so
+        // the row lands where it will actually end up.
+        if (firstScroll.current) {
+            const id = requestAnimationFrame(scroll)
+            return () => cancelAnimationFrame(id)
+        }
+        const id = setTimeout(scroll, 620)
+        return () => clearTimeout(id)
+    }, [openSlug])
+
+    const toggleOpen = (slug) =>
+        navigate({ hash: openSlug === slug ? '' : encodeURIComponent(slug) }, { replace: true })
 
     const typeCounts = useMemo(() => {
         const counts = new Map()
@@ -174,8 +191,7 @@ export default function Ratings() {
 
                 <section className="blogs-results">
                     <div className="ratings-columns">
-                        <span className="blogs-label">Date</span>
-                        <span className="blogs-label">Name</span>
+                        <span className="blogs-label">Review</span>
                         <span className="blogs-label ratings-columns-score">Score</span>
                     </div>
 
@@ -190,8 +206,8 @@ export default function Ratings() {
                             <RatingRow
                                 key={r.slug}
                                 {...r}
-                                open={open.has(r.slug)}
-                                onToggle={() => toggleIn(setOpen, r.slug)}
+                                open={openSlug === r.slug}
+                                onToggle={() => toggleOpen(r.slug)}
                             />
                         ))}
                     </ul>
