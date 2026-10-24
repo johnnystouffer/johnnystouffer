@@ -99,7 +99,7 @@ export default function Radio({ image, alt = '', title, artist, src }) {
           inert={!open}
         >
           <div className="radio-image">
-            <img src={image} alt={alt} />
+            <img src={image} alt={alt} loading="lazy" />
           </div>
           <div className="radio-body">
             <div className="radio-label">

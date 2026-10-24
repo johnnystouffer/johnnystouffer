@@ -53,7 +53,6 @@ function RatingRow({ slug, meta, markdown, open, onToggle }) {
                 <span className="ratings-row-plus" aria-hidden="true">{open ? '−' : '+'}</span>
             </button>
 
-            {/* 0fr -> 1fr grid row animates the height without measuring it. */}
             <div id={panelId} className="ratings-panel" inert={!open}>
                 <div className="ratings-panel-inner">
                     <div className="ratings-detail">

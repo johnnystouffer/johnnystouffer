@@ -62,7 +62,7 @@ function parseInline(text, keyPrefix = 'i') {
         const key = `${keyPrefix}-${i++}`
 
         if (m[1]) {
-            nodes.push(<img key={key} src={m[3]} alt={m[2]} className="blog-img" />)
+            nodes.push(<img key={key} src={m[3]} alt={m[2]} className="blog-img" loading="lazy" />)
         } else if (m[4]) {
             nodes.push(
                 <a key={key} href={m[6]} target="_blank" rel="noopener noreferrer">
@@ -267,7 +267,7 @@ export default function BlogParser({ markdown, showHeader = true }) {
                         {meta.author && <span className="blog-author">{meta.author}</span>}
                         {date && <time className="blog-date">{date}</time>}
                     </div>
-                    {meta.image && <img className="blog-cover" src={meta.image} alt={meta.alt ?? ''} />}
+                    {meta.image && <img className="blog-cover" src={meta.image} alt={meta.alt ?? ''} loading="lazy" />}
                 </header>
             )}
             <div className="blog-body">{blocks}</div>
