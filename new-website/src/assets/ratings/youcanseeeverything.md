@@ -3,7 +3,7 @@ title: "You Can See Everything"
 type: movie
 year: 2026
 rating: 9
-date: 2026-11-6
+date: 2026-11-06
 image: youcanseeeverything.jpg
 summary: "I did see this movie before I saw it cause I was capable of seeing it"
 ---
