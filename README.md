@@ -10,7 +10,7 @@
 
 <p align="center">I'm a <b>Software Engineer I</b> at <b>Collins Aerospace</b> that works on mainly <b>Embedded Systems in C++</b>.</p>
 
-<p align="center">On the side I occasionally like to make weekend projects, which are usually <b>Full Stack Development</b> using <b>React</b> and various backend frameworks <b>(Spring Boot, Flask, Django, etc.)</b></p>
+<p align="center">On the side, I occasionally like to make weekend projects, which usually involve <b>Full Stack Development</b> using <b>React</b> and various backend frameworks <b>(Spring Boot, Flask, Django, etc.)</b>.</p>
 
 <h2 align="center">Experience</h2>
 
@@ -22,7 +22,7 @@
     </td>
     <td align="left" valign="middle">
       <b>Software Engineer</b> - Collins Aerospace<br>
-      <sub>Working on real-time mission system technology</sub>
+      <sub>Real-time mission system technology</sub>
     </td>
     <td align="right" valign="middle" width="140">
       <sub>July 26 - Present</sub>
@@ -34,7 +34,7 @@
     </td>
     <td align="left" valign="middle">
       <b>Software Engineering Intern</b> - Collins Aerospace<br>
-      <sub>Built real-time GPS filtering + predictive mapping</sub>
+      <sub>Real-time GPS filtering + predictive mapping</sub>
     </td>
     <td align="right" valign="middle" width="140">
       <sub>Summer 2025</sub>
@@ -58,7 +58,7 @@
     </td>
     <td align="left" valign="middle">
       <b>DSA Teaching Assistant</b> - Michigan State University<br>
-      <sub>Supported 300+ students in DSA</sub>
+      <sub>Support for 300+ students in DSA</sub>
     </td>
     <td align="right" valign="middle" width="140">
       <sub>Jan 2025 - May 2026</sub>
@@ -78,14 +78,14 @@
       &nbsp;<a href="https://odysseymaps.com"><b>Odyssey Maps</b></a><br>
       &nbsp;<sub><code>React</code> <code>Spring Boot</code> <code>PostgreSQL</code></sub>
       <br clear="all"><br>
-      Track Mario Odyssey progress across 15 kingdoms.
+      Track progress in Mario Odyssey across 15 kingdoms
     </td>
     <td width="50%" align="left" valign="top">
       <img src="./resources/focus.svg.png" width="46" align="left" alt="FocusTube"/>
       &nbsp;<a href="https://focus-youtube.vercel.app/"><b>FocusTube</b></a><br>
       &nbsp;<sub><code>Next.js</code> <code>Tailwind</code> <code>YouTube API</code></sub>
       <br clear="all"><br>
-      Distraction-free YouTube wrapper.
+      Distraction-free YouTube wrapper
     </td>
   </tr>
 </table>
